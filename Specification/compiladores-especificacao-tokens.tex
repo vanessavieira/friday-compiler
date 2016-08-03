@@ -1,0 +1,152 @@
+\documentclass[a4paper, 12pt, article]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{listings}
+\lstset{language=C++}
+\lstset{keepspaces=true}
+\lstset{frame=lines}
+\lstset{numbers=left}
+\usepackage{caption}
+\captionsetup[table]{name=Tabela}
+\usepackage[brazilian]{babel}
+
+\title{Nova - Especificação de Tokens}
+\author{Naelson Douglas \and Rubens Pessoa}
+\date{\today}
+\newcommand{\institution}{Universidade Federal de Alagoas
+  \\ Instituto de Computação}
+\newcommand{\department}{Ciência da Computação}
+
+\renewcommand{\maketitlehooka}{
+  \centering
+  \institution\\
+  \emph{\department}\\[.2cm]
+  \par
+  \hrulefill
+  \vfill}
+\renewcommand{\maketitlehookb}{\vfill}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\makeatletter
+\let\l@subsection\l@section
+\let\l@section\l@chapter
+\makeatother
+\setsecnumdepth{subsection}
+
+\begin{document}
+
+\frontmatter
+\begin{titlingpage}
+  \maketitle
+\end{titlingpage}
+
+\tableofcontents
+
+\mainmatter
+
+\section{Linguagem de Programação a ser utilizada na implementação}
+\label{sec:intro}
+A linguagem de programação que será utilizada para implementar os analisadores léxico e sintático será o Java, em sua versão 1.8.
+
+\section{Enumeração com as categorias}
+\label{sec:conjunto}
+
+\subsection{Enum}
+\begin{lstlisting}
+public enum Categories {
+	id,
+	cteFloat,
+	cteInt,
+	cteStr,
+	opAtr,
+	opMeq,
+	opMaq,
+	opMeIgq,
+	opMaIgq,
+	OpIg,
+	OpDif,
+	opAd,
+	opSub,
+	opMul,
+	opAnd,
+	opOr,
+	opNeg,
+	prIf,
+	prElse,
+	prShoot,
+	prWhile,
+	prFor,
+	prInt,
+	prFloat,
+	prBool,
+	prString,
+	prTrue,
+	prFalse,
+	sp,
+	abPar,
+	fcPar,
+	abCh,
+	fcCh,
+	abCo,
+	fcCo
+}
+\end{lstlisting}
+
+\section{Expressões Regulares Auxiliares e Lexemas}
+\label{sec:era e lex}
+
+\subsection{Expressões Regulares Auxiliares}
+\label{subsec:era}
+
+\begin{lstlisting}
+  letra = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z" |
+  digito = "0" | "1" | ... | "9" |
+  espacoEmBranco = " "
+\end{lstlisting}
+
+\subsection{Lexemas}
+\label{subsec:lexemas}
+
+\begin{lstlisting}
+	id = letra (letra | digito)*
+	cteFloat = "-" ? digito+("."digito+)?
+	cteInt = "-" ? digito+
+	cteStr = """ (digito | letra | espacoEmBranco)* """
+	opAt = "="
+	opMe = "<"
+	opMa = ">"
+	opIg = "=="
+	opDif = "!="
+	opMei = "<="
+	opMai = ">="
+	opAd = "+"
+	opSub = "-"
+	opMul = "*" | "/"
+	opAnd = "and" 
+	opOr = "or" 
+	opNeg = "not"
+	prIf = "if"
+	prElse = "else"
+	prShoot = "shoot"
+	prWhile = "while"
+	prFor = "for"
+	prInt = "int"
+	prChar = "char"
+	prFloat = "float"
+	prBool = "bool"
+	prString = "string"
+	prTrue = "True",
+	prFalse = "False",
+	abPar = "("
+	fcPar = ")"
+	abCh = "{"
+	fcCh = "}"
+	abCo = "["
+	fcCo = "]"
+	sp =  ";" | "," 
+\end{lstlisting}
+\end{document}
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
