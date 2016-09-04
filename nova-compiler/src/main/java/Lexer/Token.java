@@ -1,3 +1,5 @@
+package Lexer;
+
 /**
  * Created by rubenspessoa on 04/09/16.
  */
@@ -23,9 +25,11 @@ public class Token {
         OP_AD(12),
         OP_SUB(13),
         OP_MULT(14),
+        OP_DIV(36),
+        OP_MOD(37),
         OP_AND(15),
         OP_OR(16),
-        OP_NEG(17),
+        OP_NOT(17),
         PR_IF(18),
         PR_ELSE(19),
         PR_SHOOT(20),
@@ -64,7 +68,7 @@ public class Token {
      * Construct the token representation within its values
      * @param tokenCategory Category Identifier int
      * @param sequence String that represents the token
-     * @param pos Token position in input
+     * @param pos Lexer.Token position in input
      */
 
     public Token(TokenCategory tokenCategory,
