@@ -35,35 +35,24 @@ public class Lexer {
     private LinkedList<Token> tokens;
     private static Lexer lexer = null;
 
+    private Lexer() {
+        this.tokenInfos = new LinkedList<TokenInfo>();
+        this.tokens = new LinkedList<Token>();
+    }
+
     /**
      * @return the lexer for Nova programming language.
      */
-    public static Lexer getLexer() {
+    public static Lexer getLexer() throws Exception {
         if (lexer == null) {
             lexer = createLexer();
         }
         return lexer;
     }
 
-    private static Lexer createLexer() {
+    private static Lexer createLexer() throws Exception {
         Lexer lexer = new Lexer();
 
-        lexer.add("[a-zA-Z][_a-zA-Z0-9]*\\w*", Token.TokenCategory.ID);
-        lexer.add("[+|-]?([0-9]*\\.[0-9]*)", Token.TokenCategory.CTE_FLOAT);
-        lexer.add("[0-9]*", Token.TokenCategory.CTE_INT);
-        lexer.add("[a-zA-Z_]?\"(\\.|[^\"])*\"", Token.TokenCategory.CTE_STR);
-        lexer.add("=", Token.TokenCategory.OP_ATR);
-        lexer.add("<", Token.TokenCategory.OP_MEQ);
-        lexer.add(">", Token.TokenCategory.OP_MAQ);
-        lexer.add("<=", Token.TokenCategory.OP_MEIGQ);
-        lexer.add(">=", Token.TokenCategory.OP_MAIGQ);
-        lexer.add("==", Token.TokenCategory.OP_IG);
-        lexer.add("!=", Token.TokenCategory.OP_DIF);
-        lexer.add("+", Token.TokenCategory.OP_AD);
-        lexer.add("-", Token.TokenCategory.OP_SUB);
-        lexer.add("*", Token.TokenCategory.OP_MULT);
-        lexer.add("/", Token.TokenCategory.OP_DIV);
-        lexer.add("%", Token.TokenCategory.OP_MOD);
         lexer.add("and", Token.TokenCategory.OP_AND);
         lexer.add("or", Token.TokenCategory.OP_OR);
         lexer.add("not", Token.TokenCategory.OP_NOT);
@@ -79,12 +68,30 @@ public class Lexer {
         lexer.add("True", Token.TokenCategory.PR_TRUE);
         lexer.add("False", Token.TokenCategory.PR_FALSE);
         lexer.add("[;|,]", Token.TokenCategory.SP);
-        lexer.add("(", Token.TokenCategory.AB_PAR);
-        lexer.add(")", Token.TokenCategory.FEC_PAR);
-        lexer.add("[", Token.TokenCategory.AB_COL);
-        lexer.add("]", Token.TokenCategory.FEC_COL);
-        lexer.add("{", Token.TokenCategory.AB_CH);
-        lexer.add("}", Token.TokenCategory.FEC_CH);
+        lexer.add("\\(", Token.TokenCategory.AB_PAR);
+        lexer.add("\\)", Token.TokenCategory.FEC_PAR);
+        lexer.add("\\[", Token.TokenCategory.AB_COL);
+        lexer.add("\\]", Token.TokenCategory.FEC_COL);
+        lexer.add("\\{", Token.TokenCategory.AB_CH);
+        lexer.add("\\}", Token.TokenCategory.FEC_CH);
+        lexer.add("::", Token.TokenCategory.VECTOR_AUX);
+        lexer.add("[a-zA-Z][_a-zA-Z0-9]*\\w*", Token.TokenCategory.ID);
+        lexer.add("[+|-]?([0-9]*\\.[0-9]+)", Token.TokenCategory.CTE_FLOAT);
+        lexer.add("[0-9]+", Token.TokenCategory.CTE_INT);
+        lexer.add("[a-zA-Z_]?\"(\\.|[^\"])*\"", Token.TokenCategory.CTE_STR);
+        lexer.add("#[a-zA-Z][_a-zA-Z0-9]*", Token.TokenCategory.COMMENT);
+        lexer.add("=", Token.TokenCategory.OP_ATR);
+        lexer.add("<", Token.TokenCategory.OP_MEQ);
+        lexer.add(">", Token.TokenCategory.OP_MAQ);
+        lexer.add("<=", Token.TokenCategory.OP_MEIGQ);
+        lexer.add(">=", Token.TokenCategory.OP_MAIGQ);
+        lexer.add("==", Token.TokenCategory.OP_IG);
+        lexer.add("!=", Token.TokenCategory.OP_DIF);
+        lexer.add("\\+", Token.TokenCategory.OP_AD);
+        lexer.add("-", Token.TokenCategory.OP_SUB);
+        lexer.add("\\*", Token.TokenCategory.OP_MULT);
+        lexer.add("/", Token.TokenCategory.OP_DIV);
+        lexer.add("%", Token.TokenCategory.OP_MOD);
 
         return lexer;
     }
@@ -94,10 +101,10 @@ public class Lexer {
      * @param regex regular expression to match against
      * @param tokenCategory tokenCategory that the regular expression is linked to
      */
-    public void add(String regex, Token.TokenCategory tokenCategory) {
+    public void add(String regex, Token.TokenCategory tokenCategory) throws Exception {
         tokenInfos.add(
                 new TokenInfo(
-                        Pattern.compile("ˆ(" + regex + ")"),
+                        Pattern.compile("^(" + regex+")"),
                         tokenCategory
                 )
         );
@@ -110,7 +117,7 @@ public class Lexer {
      */
     public void lex(String inputString) throws Exception{
 
-        String s = inputString.trim();
+        String s = inputString.replace(" ", "");
         int totalLength = s.length();
         tokens.clear();
 
@@ -124,8 +131,10 @@ public class Lexer {
                 if (m.find()) {
                     match = true;
                     String token = m.group().trim();
+                    /*
                     System.out.println("Sucess matching " + s + " against " +
                             info.regex.pattern() + " : " + token);
+                    */
                     s = m.replaceFirst("").trim();
                     tokens.add(
                             new Token(

@@ -27,6 +27,8 @@ public class Token {
         OP_MULT(14),
         OP_DIV(36),
         OP_MOD(37),
+        COMMENT(38),
+        VECTOR_AUX(39),
         OP_AND(15),
         OP_OR(16),
         OP_NOT(17),
@@ -51,7 +53,7 @@ public class Token {
 
         private int value;
 
-        private TokenCategory(int value) {
+        TokenCategory(int value) {
             this.value = value;
         }
 
@@ -79,5 +81,10 @@ public class Token {
         this.sequence = sequence;
         this.pos = pos;
 
+    }
+
+    @Override
+    public String toString() {
+        return "(Sequence: " + sequence + ", Token Category: " + tokenCategory.getValue() + ", Position: " + pos + ")\n";
     }
 }
