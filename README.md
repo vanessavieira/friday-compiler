@@ -23,7 +23,7 @@ Author: Barros Filho, Rubens. 17/09/2016
   * Unlimited size.
   * The use of white spaces is prohibited.
 * Comments
-  * Line comment: Demarcated by "/*"
+  * Line comment: Demarcated by "#"
   * Block comment: Doesn't exist in NOVA programming language.
 * Integer
 * Floating Point
