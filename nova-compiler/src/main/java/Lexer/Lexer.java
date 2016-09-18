@@ -130,17 +130,17 @@ public class Lexer {
         InputStreamReader isr;
         BufferedReader br;
 
-        ArrayList<String> inputMatrix = new ArrayList<String>();
+        ArrayList<String> lines = new ArrayList<String>();
         in = new FileInputStream(file);
         isr = new InputStreamReader(in, Charset.forName("UTF-8"));
         br = new BufferedReader(isr);
 
         while ((line = br.readLine()) != null) {
-            inputMatrix.add(line);
+            lines.add(line);
         }
 
-        for (int i = 0; i < inputMatrix.size(); i++) {
-            lex(inputMatrix.get(i), i);
+        for (int i = 0; i < lines.size(); i++) {
+            lex(lines.get(i), i);
         }
 
     }
@@ -150,7 +150,7 @@ public class Lexer {
      * The result can be acessed via getTokens().
      * @param inputString
      */
-    private void lex(String inputString, int column) throws Exception {
+    private void lex(String inputString, int line) throws Exception {
 
         String s = inputString.replace(" ", "");
         int totalLength = s.length();
@@ -170,8 +170,8 @@ public class Lexer {
                             new Token(
                                     info.tokenCategory,
                                     token,
-                                    totalLength - remaining,
-                                    column
+                                    line,
+                                    totalLength - remaining
                             ));
                     break;
                 }
