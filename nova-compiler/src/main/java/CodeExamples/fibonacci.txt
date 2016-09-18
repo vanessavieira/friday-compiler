@@ -1,0 +1,31 @@
+int fibonacci(int n) {
+    int f1 = 0;
+    int f2 = 1;
+    int fi = 0;
+
+    intOut(0);
+    stringOut("", "");
+    intOut(1);
+
+    if (n == 0 or n == 1) {
+      shoot 1;
+    }
+
+    while(fi < n) {
+      fi = f1 + f2;
+      f1 = f2;
+      f2 = fi;
+      stringOut("", "");
+      intOut(fi);
+    }
+
+    shoot fi;
+}
+
+void main() {
+    int n;
+    intIn(n);
+
+    int fib = fibonacci(n);
+    # do something with fib
+}

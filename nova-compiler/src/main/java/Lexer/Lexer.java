@@ -1,5 +1,11 @@
 package Lexer;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -59,6 +65,7 @@ public class Lexer {
         lexer.add("if", Token.TokenCategory.PR_IF);
         lexer.add("else", Token.TokenCategory.PR_ELSE);
         lexer.add("shoot", Token.TokenCategory.PR_SHOOT);
+        lexer.add("void", Token.TokenCategory.VOID);
         lexer.add("while", Token.TokenCategory.PR_WHILE);
         lexer.add("for", Token.TokenCategory.PR_FOR);
         lexer.add("int", Token.TokenCategory.PR_INT);
@@ -111,15 +118,42 @@ public class Lexer {
     }
 
     /**
+     * Tokenize an input File.
+     * Calls private method lex(String inputString)
+     * @param file with the code to be tokenized.
+     */
+    public void lex(File file) throws Exception {
+        tokens.clear();
+
+        FileInputStream in;
+        String line;
+        InputStreamReader isr;
+        BufferedReader br;
+
+        ArrayList<String> inputMatrix = new ArrayList<String>();
+        in = new FileInputStream(file);
+        isr = new InputStreamReader(in, Charset.forName("UTF-8"));
+        br = new BufferedReader(isr);
+
+        while ((line = br.readLine()) != null) {
+            inputMatrix.add(line);
+        }
+
+        for (int i = 0; i < inputMatrix.size(); i++) {
+            lex(inputMatrix.get(i), i);
+        }
+
+    }
+
+    /**
      * Tokenize an input string.
      * The result can be acessed via getTokens().
      * @param inputString
      */
-    public void lex(String inputString) throws Exception{
+    private void lex(String inputString, int column) throws Exception {
 
         String s = inputString.replace(" ", "");
         int totalLength = s.length();
-        tokens.clear();
 
         while (!s.equals("")) {
             int remaining = s.length();
@@ -131,16 +165,13 @@ public class Lexer {
                 if (m.find()) {
                     match = true;
                     String token = m.group().trim();
-                    /*
-                    System.out.println("Sucess matching " + s + " against " +
-                            info.regex.pattern() + " : " + token);
-                    */
                     s = m.replaceFirst("").trim();
                     tokens.add(
                             new Token(
                                     info.tokenCategory,
                                     token,
-                                    totalLength - remaining
+                                    totalLength - remaining,
+                                    column
                             ));
                     break;
                 }

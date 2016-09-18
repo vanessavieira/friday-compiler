@@ -49,7 +49,8 @@ public class Token {
         AB_CH(32),
         FEC_CH(33),
         AB_COL(34),
-        FEC_COL(35);
+        FEC_COL(35),
+        VOID(40);
 
         private int value;
 
@@ -62,29 +63,32 @@ public class Token {
         }
     }
 
-    TokenCategory tokenCategory;
-    String sequence;
-    int pos;
+    private TokenCategory tokenCategory;
+    private String sequence;
+    private int lin, col;
 
     /**
      * Construct the token representation within its values
      * @param tokenCategory Category Identifier int
      * @param sequence String that represents the token
-     * @param pos Lexer.Token position in input
+     * @param lin Lexer.Token line in input
+     * @param col Lexer.Token column in input
      */
 
     public Token(TokenCategory tokenCategory,
                  String sequence,
-                 int pos) {
+                 int lin,
+                 int col) {
 
         this.tokenCategory = tokenCategory;
         this.sequence = sequence;
-        this.pos = pos;
+        this.lin = lin;
+        this.col = col;
 
     }
 
     @Override
     public String toString() {
-        return "(Sequence: " + sequence + ", Token Category: " + tokenCategory.getValue() + ", Position: " + pos + ")\n";
+        return "(Sequence: " + sequence + ", Token Category: " + tokenCategory.getValue() + ", Position: (" + this.lin + ", " + this.col + "))\n";
     }
 }
