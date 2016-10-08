@@ -11,7 +11,7 @@
 \captionsetup[table]{name=Tabela}
 \usepackage[brazilian]{babel}
 
-\title{Nova - Especificação de Tokens}
+\title{Nova - Especificação de Tokens v2}
 \author{Naelson Douglas \and Rubens Pessoa}
 \date{\today}
 \newcommand{\institution}{Universidade Federal de Alagoas
@@ -56,6 +56,7 @@ A linguagem de programação que será utilizada para implementar os analisadore
 \subsection{Enum}
 \begin{lstlisting}
 public enum Categories {
+	eof,
 	id,
 	cteFloat,
 	cteInt,
@@ -84,36 +85,32 @@ public enum Categories {
 	prString,
 	prTrue,
 	prFalse,
-	sp,
+	sp1,
+	sp2,
 	abPar,
 	fcPar,
 	abCh,
 	fcCh,
 	abCo,
-	fcCo
+	fcCo,
+	void,
+	readIn,
+	printOut,
+	comment
 }
 \end{lstlisting}
 
 \section{Expressões Regulares Auxiliares e Lexemas}
 \label{sec:era e lex}
-
-\subsection{Expressões Regulares Auxiliares}
-\label{subsec:era}
-
-\begin{lstlisting}
-  letra = "a" | "b" | ... | "z" | "A" | "B" | ... | "Z" |
-  digito = "0" | "1" | ... | "9" |
-  espacoEmBranco = " "
-\end{lstlisting}
-
 \subsection{Lexemas}
 \label{subsec:lexemas}
 
 \begin{lstlisting}
-	id = letra (letra | digito)*
-	cteFloat = "-" ? digito+("."digito+)?
-	cteInt = "-" ? digito+
-	cteStr = """ (digito | letra | espacoEmBranco)* """
+	id = [a-zA-Z][_a-zA-Z0-9]*\w*
+	cteFloat = [+|-]?([0-9]*\.[0-9]+)
+	cteInt = [0-9]+
+	cteStr = "[a-zA-Z_]?"(\.|[^"])*"
+	comment = "#[a-zA-Z][_a-zA-Z0-9]*"
 	opAt = "="
 	opMe = "<"
 	opMa = ">"
@@ -123,7 +120,8 @@ public enum Categories {
 	opMai = ">="
 	opAd = "+"
 	opSub = "-"
-	opMul = "*" | "/"
+	opMul = "*"
+	OpDiv = "/"
 	opAnd = "and" 
 	opOr = "or" 
 	opNeg = "not"
@@ -145,7 +143,11 @@ public enum Categories {
 	fcCh = "}"
 	abCo = "["
 	fcCo = "]"
-	sp =  ";" | "," 
+	sp1 =  ";"
+	sp2 = ","
+	readIn = "readIn"
+	printOut = "printOut"
+	vectorAux = "::"
 \end{lstlisting}
 \end{document}
 Contact GitHub API Training Shop Blog About

@@ -74,7 +74,10 @@ public class Lexer {
         lexer.add("string", Token.TokenCategory.PR_STRING);
         lexer.add("True", Token.TokenCategory.PR_TRUE);
         lexer.add("False", Token.TokenCategory.PR_FALSE);
-        lexer.add("[;|,]", Token.TokenCategory.SP);
+        lexer.add(";", Token.TokenCategory.SP1);
+        lexer.add(",", Token.TokenCategory.SP2);
+        lexer.add("readIn", Token.TokenCategory.READIN);
+        lexer.add("printOut", Token.TokenCategory.PRINTOUT);
         lexer.add("\\(", Token.TokenCategory.AB_PAR);
         lexer.add("\\)", Token.TokenCategory.FEC_PAR);
         lexer.add("\\[", Token.TokenCategory.AB_COL);

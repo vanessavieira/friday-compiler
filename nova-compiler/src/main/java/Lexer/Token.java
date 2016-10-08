@@ -43,14 +43,17 @@ public class Token {
         PR_STRING(26),
         PR_TRUE(27),
         PR_FALSE(28),
-        SP(29),
+        SP1(29),
         AB_PAR(30),
         FEC_PAR(31),
         AB_CH(32),
         FEC_CH(33),
         AB_COL(34),
         FEC_COL(35),
-        VOID(40);
+        VOID(40),
+        READIN(41),
+        PRINTOUT(42),
+        SP2(43);
 
         private int value;
 
@@ -84,7 +87,6 @@ public class Token {
         this.sequence = sequence;
         this.lin = lin;
         this.col = col;
-
     }
 
     @Override

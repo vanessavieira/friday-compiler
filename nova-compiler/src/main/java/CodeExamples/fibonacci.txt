@@ -9,14 +9,14 @@ int fibonacci(int n) {
 
     if (n == 0 or n == 1) {
       shoot 1;
-    }
+    };
 
     while(fi < n) {
       fi = f1 + f2;
       f1 = f2;
       f2 = fi;
-      stringOut("", "");
-      intOut(fi);
+      printOut("", "");
+      printOut("fi");
     }
 
     shoot fi;

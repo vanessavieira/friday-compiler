@@ -11,8 +11,8 @@
 \captionsetup[table]{name=Tabela}
 \usepackage[brazilian]{babel}
 
-\title{Nova}
-\author{Naelson Douglas \and Rubens Pessoa}
+\title{Nova - Especificação v2}
+\author{Rubens Pessoa}
 \date{\today}
 \newcommand{\institution}{Universidade Federal de Alagoas
   \\ Instituto de Computação}
@@ -48,7 +48,7 @@
 
 \section{Introdução}
 \label{sec:intro}
-A Nova consiste em uma linguagem de propósito geral, estruturada, imperativa e fortemente tipada. Inspirada na linguagem de programação C. Cada instrução deverá terminar com um ponto e vírgula. Será possível a criação de funções afim de melhorar a legibilidade e escritabilidade. 
+A Nova consiste em uma linguagem de propósito geral, estruturada, imperativa e fortemente tipada. Inspirada na linguagem de programação C. Cada instrução deverá terminar com um ponto e vírgula. O escopo de suas variáveis será local e será possível a criação de funções afim de melhorar a legibilidade e escritabilidade. 
 
 \section{Conjunto de Tipo de Dados}
 \label{sec:conjunto}
@@ -65,7 +65,7 @@ Seu identificador segue a seguinte forma:
 
 \subsection{Comentário}
 \label{subsec:comentario}
-Os comentários serão indicados com o seguinte caractere ``\//*''. Desta forma, o que se escrever na linha após estes caracteres será descartado.
+Os comentários serão indicados com o seguinte caractere ``\#''. Desta forma, o que se escrever na linha após estes caracteres será descartado.
 
 \subsection{Inteiro}
 \label{subsec:inteiro}
@@ -120,6 +120,28 @@ Exemplo:
   int list::3;
   string words::10;
 \end{lstlisting}
+
+\subsection{Operações suportadas}
+\label{operacoes_suport}
+
+Todos os tipos suportam as operações descritas na tabela \ref{operacoes_table} com  valores correspondentes ao seu respectivo tipo.
+
+\begin{table}[]
+\centering
+\caption{Operações Suportadas}
+\label{operacoes_table}
+\begin{tabular}{lllll}
+\textbf{Tipo}   & \textbf{Operações Suportadas}                  &  &  &  \\
+int    & atribuição, aritméticos e relacionais  &  &  &  \\
+float  & atribuição, aritméticos e relacionais  &  &  &  \\
+string & atribuição, relacionais e concatenação &  &  & \\
+boolean & atribuição, relacionais e lógicos
+\end{tabular}
+\end{table}
+
+\subsection{Coerção}
+
+A NOVA não admite coerção implítica de tipos. Para converter de qualquer tipo para string explicitamente, basta usar aspas ao redor do valor ou identificador.
 
 \section{Conjuntos de Operadores}
 \label{sec:operadores}
@@ -191,16 +213,17 @@ operadores ordenadas decrescentemente de acordo com a precedência.
   \centering
   \begin{tabular}{r|r}
 
-    Operadores & Associatividade à \\
+    Operadores & Associatividade \\
     \hline
     () & Não associativo \\
-    not & Direita \\
-    $*$ / \% & Esquerda \\
-    + - & Esquerda \\
-    \textless \textless= \textgreater \textgreater= & Não associativo \\
-    == != & Não associativo \\
-    and or & Esquerda \\
-    = & Direita
+    not & Direita para a esquerda \\
+    $*$ / \% & Da esquerda para a direita\\
+    + - & Da esquerda para a direita \\
+	\textless \textgreater & Da esquerda para a direita \\
+	\textless= \textgreater= & Da esquerda para a direita \\
+    == != & Da esquerda para a direita \\
+    and or & Da esquerda para a direita \\
+    = & Da esquerda para a direita
 
   \end{tabular}
   \caption{Tabela de precedência e associatividade}
@@ -209,7 +232,7 @@ operadores ordenadas decrescentemente de acordo com a precedência.
 
 \section{Instruções}
 \label{sec:instrucoes}
-Como é uma linguagem inspirada em C, temos que seus statementes são similares e portanto são terminado sempre na presença de um ``;'', exceto por if, else, while e for.
+Como é uma linguagem inspirada em C, temos que seus statementes são similares e portanto são terminado sempre na presença de um ``;''.
 
 \subsection{Estrutura condicional de uma e duas vias}
 \label{sub:estruturacondicional}
@@ -217,7 +240,7 @@ Como é uma linguagem inspirada em C, temos que seus statementes são similares 
 \subsubsection{if, if-else}
 \label{subsubsec:if}
 A estrutura condicional ``if'' será sempre relacionada a uma condição lógica ou à uma variável booleana dentro de
-parenteses e seu escopo será definido por chaves. O algoritmo irá executar o código contido no ``if'', se e somente se, a sua condição lógica resultar em True, em caso negativo (False), pode ser criada uma clausula ``else'', que será executada no caso de a condição lógica resultar em False.
+parenteses e seu escopo será definido por chaves e ponto-virgula. O algoritmo irá executar o código contido no ``if'', se e somente se, a sua condição lógica resultar em True, em caso negativo (False), pode ser criada uma clausula ``else'', que será executada no caso de a condição lógica resultar em False.
 
 \subsection{Estrutura iterativa com controle lógico}
 \label{subsec:iterativalogico}
@@ -225,7 +248,7 @@ parenteses e seu escopo será definido por chaves. O algoritmo irá executar o c
 \subsubsection{while}
 \label{subsubsec:while}
 A estrutura de loop``while'' é usado como uma repetição condicional, ou seja, a repetição só irá
-parar se a sua condição for falsa. Desta forma, o ``while'' será sempre relacionada a uma condição lógica ou à uma variável booleana dentro de parenteses e seu escopo será definido por chaves.
+parar se a sua condição for falsa. Desta forma, o ``while'' será sempre relacionada a uma condição lógica ou à uma variável booleana dentro de parenteses e seu escopo será definido por chaves e finalizado com um ponto-virgula.
 
 
 \subsection{Estrutura iterativa controlada por contador}
@@ -243,12 +266,9 @@ ser passado.
 Seguem as funções de input e output:
 
 \begin{itemize}
-\item stringIn(string str)
-\item intIn(int i)
-\item floatIn(float f)
-\item stringOut(string str)
-\item intOut(int i)
-\item floatOut(float f)
+\item readIn(identificador)
+\item printOut(String string)
+
 \end{itemize}
 
 \subsection{Funções}
@@ -259,7 +279,7 @@ Exemplo:
 \begin{lstlisting}
   int sumInt(int x, int y) {
     shoot x + y;
-  }
+  };
   int a = sumInt(5, 2);
 \end{lstlisting}
 
@@ -268,6 +288,9 @@ os outros tipos são por valor.
 
 Para funções há um tipo especial chamado ``void'', em que significa que tal
 função retornará nenhum tipo. Não é possível uma variável ser do tipo ``void''.
+
+\newpage
+
 \section{Exemplos de Códigos}
 \label{sec:code}
 
@@ -276,7 +299,7 @@ função retornará nenhum tipo. Não é possível uma variável ser do tipo ``v
 \begin{lstlisting}
   void main() {
     stringOut(``Alo Mundo!'');
-  }
+  };
 \end{lstlisting}
 
 \subsection{Fibonacci}
@@ -287,32 +310,32 @@ função retornará nenhum tipo. Não é possível uma variável ser do tipo ``v
     int f2 = 1;
     int fi = 0;
 
-    intOut(0);
-    stringOut(``, ``);
-    intOut(1);
+    printOut(``0'');
+    printOut(``, '');
+    printOut(``1'');
 
     if (n == 0 or n == 1) {
       shoot 1;
-    }
+    };
 
     while(fi < n) {
       fi = f1 + f2;
       f1 = f2;
       f2 = fi;
-      stringOut(``, ``);
-      intOut(fi);
-    }
+      printOut(``, ``);
+      printOut(``fi'');
+    };
 
     shoot fi;
-  }
+  };
 
   void main() {
     int n;
-    intIn(n);
+    readIn(n);
 
     int fib = fibonacci(n);
-    # do something with fib
-  }
+    /* do something with fib
+  };
 \end{lstlisting}
 
 \subsection{Shell sort}
@@ -320,20 +343,20 @@ função retornará nenhum tipo. Não é possível uma variável ser do tipo ``v
 \begin{lstlisting}
   void main() {
     int size;
-    intIn(size);
+    readIn(size);
 
     int vet::size;
     for (int i = 0; i < size; i = i + 1) {
       int x;
-      intIn(x);
+      readIn(x);
       add(vet, x);
-    }
+    };
 
     int value;
     int gap = 1;
     while(gap < size) {
       gap = 3 * gap + 1;
-    }
+    };
 
     while(gap > 1) {
       gap = gap / 3;
@@ -344,11 +367,11 @@ função retornará nenhum tipo. Não é possível uma variável ser do tipo ``v
         while(j >= 0 and value < getValue(vet, j)) {
           setValue(vet, j + gap, getValue(vet, j));
           j = j - gap;
-        }
+        };
 
         setValue(vet, j + gap, value);
-      }
-    }
-  }
+      };
+    };
+  };
 \end{lstlisting}
 \end{document}
