@@ -4,6 +4,7 @@
 
 import java.io.File;
 import Lexer.*;
+import Parser.Parser;
 
 public class Main {
 
@@ -15,6 +16,7 @@ public class Main {
         File fibonacci = new File(path + "CodeExamples/fibonacci.txt");
         File shellsort = new File(path + "CodeExamples/shellSort.txt");
 
+        /*
         try {
             Lexer lexer = Lexer.getLexer();
 
@@ -28,6 +30,14 @@ public class Main {
             System.out.println(lexer.getTokens());
 
         } catch (Exception e) {
+            System.err.println(e.getMessage());
+        } */
+
+        Parser parser = new Parser();
+
+        try {
+            parser.parse(helloWorld);
+        } catch ( Exception e ) {
             System.err.println(e.getMessage());
         }
     }

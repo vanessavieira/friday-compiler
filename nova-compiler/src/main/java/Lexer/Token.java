@@ -93,4 +93,8 @@ public class Token {
     public String toString() {
         return "(Sequence: " + sequence + ", Token Category: " + tokenCategory.getValue() + ", Position: (" + this.lin + ", " + this.col + "))\n";
     }
+
+    public TokenCategory getTokenCategory() {
+        return this.tokenCategory;
+    }
 }
