@@ -67,10 +67,7 @@ public class Lexer {
         lexer.add("while", Token.TokenCategory.PR_WHILE);
         lexer.add("for", Token.TokenCategory.PR_FOR);
         lexer.add("shoot", Token.TokenCategory.PR_SHOOT);
-        lexer.add("string", Token.TokenCategory.PR_STRING);
-        lexer.add("int", Token.TokenCategory.PR_INT);
-        lexer.add("float", Token.TokenCategory.PR_FLOAT);
-        lexer.add("bool", Token.TokenCategory.PR_BOOL);
+        lexer.add("string|int|float|bool", Token.TokenCategory.TYPE_VALUE);
         lexer.add("True|False", Token.TokenCategory.BOOL_VALUE);
         lexer.add("=", Token.TokenCategory.OP_ATR);
         lexer.add("<|>|<=|>=", Token.TokenCategory.OP_REL1);

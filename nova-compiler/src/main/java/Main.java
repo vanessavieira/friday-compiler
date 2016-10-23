@@ -4,7 +4,6 @@
 
 import java.io.File;
 import Lexer.*;
-import Parser.Parser;
 
 public class Main {
 
@@ -18,13 +17,12 @@ public class Main {
 
         try {
             Lexer lexer = Lexer.getLexer();
-/*
+
             lexer.lex(helloWorld);
             System.out.println(lexer.getTokens());
 
             lexer.lex(fibonacci);
             System.out.println(lexer.getTokens());
-            */
 
             lexer.lex(shellsort);
             System.out.println(lexer.getTokens());
