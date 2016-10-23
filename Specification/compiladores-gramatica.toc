@@ -1,4 +1,0 @@
-\select@language {brazilian}
-\contentsline {chapter}{Sum\'ario}{i}{section*.1}
-\contentsline {section}{\numberline {1}Especifica\IeC {\c c}\IeC {\~a}o da Gram\IeC {\'a}tica da Linguagem}{1}{section.0.1}
-\contentsline {section}{\numberline {2}Gram\IeC {\'a}ticas}{2}{section.0.2}

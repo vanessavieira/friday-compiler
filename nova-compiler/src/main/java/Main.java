@@ -16,23 +16,25 @@ public class Main {
         File fibonacci = new File(path + "CodeExamples/fibonacci.txt");
         File shellsort = new File(path + "CodeExamples/shellSort.txt");
 
-        /*
         try {
             Lexer lexer = Lexer.getLexer();
-
+/*
             lexer.lex(helloWorld);
             System.out.println(lexer.getTokens());
 
             lexer.lex(fibonacci);
             System.out.println(lexer.getTokens());
+            */
 
             lexer.lex(shellsort);
             System.out.println(lexer.getTokens());
 
+
         } catch (Exception e) {
             System.err.println(e.getMessage());
-        } */
+        }
 
+        /*
         Parser parser = new Parser();
 
         try {
@@ -40,5 +42,6 @@ public class Main {
         } catch ( Exception e ) {
             System.err.println(e.getMessage());
         }
+        */
     }
 }

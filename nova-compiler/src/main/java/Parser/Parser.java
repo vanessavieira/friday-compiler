@@ -27,13 +27,14 @@ public class Parser {
         lookahead = this.tokens.getFirst();
 
         // first production
-        program();
+        //program();
 
         if (lookahead.getTokenCategory() != Token.TokenCategory.EOF) {
             throw new ParserException("Unexpected symbol " + lookahead + " found!");
         }
     }
 
+    /*
     private void program() throws ParserException {
         output.add("<program>: <function> <main>");
         function();
@@ -134,7 +135,7 @@ public class Parser {
 
     public void main() {
         // TODO
-    }
+    } */
 
 
     /**

@@ -16,55 +16,48 @@ public class Token {
         CTE_INT(3),
         CTE_STR(4),
         OP_ATR(5),
-        OP_MEQ(6),
-        OP_MAQ(7),
-        OP_MEIGQ(8),
-        OP_MAIGQ(9),
-        OP_IG(10),
-        OP_DIF(11),
-        OP_AD(12),
-        OP_SUB(13),
-        OP_MULT(14),
-        OP_DIV(36),
-        OP_MOD(37),
-        COMMENT(38),
-        VECTOR_AUX(39),
-        OP_AND(15),
-        OP_OR(16),
-        OP_NOT(17),
-        PR_IF(18),
-        PR_ELSE(19),
-        PR_SHOOT(20),
-        PR_WHILE(21),
-        PR_FOR(22),
-        PR_INT(23),
-        PR_FLOAT(24),
-        PR_BOOL(25),
-        PR_STRING(26),
-        PR_TRUE(27),
-        PR_FALSE(28),
-        SP1(29),
-        AB_PAR(30),
-        FEC_PAR(31),
-        AB_CH(32),
-        FEC_CH(33),
-        AB_COL(34),
-        FEC_COL(35),
-        VOID(40),
-        READIN(41),
-        PRINTOUT(42),
-        SP2(43);
+        OP_REL1(6),
+        OP_REL2(7),
+        OP_AD(8),
+        OP_MULT(9),
+        OP_MOD(10),
+        COMMENT(11),
+        VECTOR_AUX(12),
+        OP_AND(13),
+        OP_OR(14),
+        OP_NOT(15),
+        PR_IF(16),
+        PR_ELSE(17),
+        PR_SHOOT(18),
+        PR_WHILE(19),
+        PR_FOR(20),
+        PR_INT(21),
+        PR_FLOAT(22),
+        PR_BOOL(23),
+        PR_STRING(24),
+        BOOL_VALUE(25),
+        SP(26),
+        AB_PAR(27),
+        FEC_PAR(28),
+        AB_CH(29),
+        FEC_CH(30),
+        AB_COL(31),
+        FEC_COL(32),
+        PR_VOID(33),
+        PR_IO(34),
+        PR_MAIN(35);
+
 
         private int value;
 
         TokenCategory(int value) {
             this.value = value;
         }
-
         public int getValue() {
             return this.value;
         }
     }
+
 
     private TokenCategory tokenCategory;
     private String sequence;

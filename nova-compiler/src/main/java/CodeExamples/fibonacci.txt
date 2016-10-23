@@ -3,9 +3,9 @@ int fibonacci(int n) {
     int f2 = 1;
     int fi = 0;
 
-    intOut(0);
-    stringOut("", "");
-    intOut(1);
+    printOut(0);
+    printOut("", "");
+    printOut(1);
 
     if (n == 0 or n == 1) {
       shoot 1;
@@ -17,15 +17,15 @@ int fibonacci(int n) {
       f2 = fi;
       printOut("", "");
       printOut("fi");
-    }
+    };
 
     shoot fi;
-}
+};
 
 void main() {
     int n;
-    intIn(n);
+    readIn(n);
 
     int fib = fibonacci(n);
     # do something with fib
-}
+};

@@ -59,25 +59,29 @@ public class Lexer {
     private static Lexer createLexer() throws Exception {
         Lexer lexer = new Lexer();
 
-        lexer.add("and", Token.TokenCategory.OP_AND);
-        lexer.add("or", Token.TokenCategory.OP_OR);
-        lexer.add("not", Token.TokenCategory.OP_NOT);
+        lexer.add("readIn|printOut", Token.TokenCategory.PR_IO);
+        lexer.add("void", Token.TokenCategory.PR_VOID);
+        lexer.add("main", Token.TokenCategory.PR_MAIN);
         lexer.add("if", Token.TokenCategory.PR_IF);
         lexer.add("else", Token.TokenCategory.PR_ELSE);
-        lexer.add("shoot", Token.TokenCategory.PR_SHOOT);
-        lexer.add("void", Token.TokenCategory.VOID);
         lexer.add("while", Token.TokenCategory.PR_WHILE);
         lexer.add("for", Token.TokenCategory.PR_FOR);
+        lexer.add("shoot", Token.TokenCategory.PR_SHOOT);
+        lexer.add("string", Token.TokenCategory.PR_STRING);
         lexer.add("int", Token.TokenCategory.PR_INT);
         lexer.add("float", Token.TokenCategory.PR_FLOAT);
         lexer.add("bool", Token.TokenCategory.PR_BOOL);
-        lexer.add("string", Token.TokenCategory.PR_STRING);
-        lexer.add("True", Token.TokenCategory.PR_TRUE);
-        lexer.add("False", Token.TokenCategory.PR_FALSE);
-        lexer.add(";", Token.TokenCategory.SP1);
-        lexer.add(",", Token.TokenCategory.SP2);
-        lexer.add("readIn", Token.TokenCategory.READIN);
-        lexer.add("printOut", Token.TokenCategory.PRINTOUT);
+        lexer.add("True|False", Token.TokenCategory.BOOL_VALUE);
+        lexer.add("=", Token.TokenCategory.OP_ATR);
+        lexer.add("<|>|<=|>=", Token.TokenCategory.OP_REL1);
+        lexer.add("==|!=", Token.TokenCategory.OP_REL2);
+        lexer.add("\\+|-", Token.TokenCategory.OP_AD);
+        lexer.add("\\*|/", Token.TokenCategory.OP_MULT);
+        lexer.add("%", Token.TokenCategory.OP_MOD);
+        lexer.add("and", Token.TokenCategory.OP_AND);
+        lexer.add("or", Token.TokenCategory.OP_OR);
+        lexer.add("not", Token.TokenCategory.OP_NOT);
+        lexer.add(";|,", Token.TokenCategory.SP);
         lexer.add("\\(", Token.TokenCategory.AB_PAR);
         lexer.add("\\)", Token.TokenCategory.FEC_PAR);
         lexer.add("\\[", Token.TokenCategory.AB_COL);
@@ -90,18 +94,6 @@ public class Lexer {
         lexer.add("[0-9]+", Token.TokenCategory.CTE_INT);
         lexer.add("[a-zA-Z_]?\"(\\.|[^\"])*\"", Token.TokenCategory.CTE_STR);
         lexer.add("#[a-zA-Z][_a-zA-Z0-9]*", Token.TokenCategory.COMMENT);
-        lexer.add("=", Token.TokenCategory.OP_ATR);
-        lexer.add("<", Token.TokenCategory.OP_MEQ);
-        lexer.add(">", Token.TokenCategory.OP_MAQ);
-        lexer.add("<=", Token.TokenCategory.OP_MEIGQ);
-        lexer.add(">=", Token.TokenCategory.OP_MAIGQ);
-        lexer.add("==", Token.TokenCategory.OP_IG);
-        lexer.add("!=", Token.TokenCategory.OP_DIF);
-        lexer.add("\\+", Token.TokenCategory.OP_AD);
-        lexer.add("-", Token.TokenCategory.OP_SUB);
-        lexer.add("\\*", Token.TokenCategory.OP_MULT);
-        lexer.add("/", Token.TokenCategory.OP_DIV);
-        lexer.add("%", Token.TokenCategory.OP_MOD);
 
         return lexer;
     }
