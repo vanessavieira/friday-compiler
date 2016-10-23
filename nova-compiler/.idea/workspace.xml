@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae9bc86d-c671-4f9a-aadd-db808aa7dbcf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CodeExamples/fibonacci.txt" afterPath="$PROJECT_DIR$/src/main/java/CodeExamples/fibonacci.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CodeExamples/helloWorld.txt" afterPath="$PROJECT_DIR$/src/main/java/CodeExamples/helloWorld.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Lexer/Lexer.java" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Lexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token.java" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Parser/Parser.java" afterPath="$PROJECT_DIR$/src/main/java/Parser/Parser.java" />
-    </list>
+    <list default="true" id="ae9bc86d-c671-4f9a-aadd-db808aa7dbcf" name="Default" comment="" />
     <ignored path="nova-compiler.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,8 +57,8 @@
       <file leaf-file-name="shellSort.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/CodeExamples/shellSort.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="4" />
+            <state relative-caret-position="465">
+              <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -767,12 +759,12 @@
       <workItem from="1477004744054" duration="36000" />
       <workItem from="1477004849118" duration="621000" />
       <workItem from="1477070488734" duration="31000" />
-      <workItem from="1477246886073" duration="2932000" />
+      <workItem from="1477246886073" duration="3097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38169000" />
+    <option name="totallyTimeSpent" value="38334000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -1377,8 +1369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CodeExamples/shellSort.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="4" />
+        <state relative-caret-position="465">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
           <folding />
         </state>
       </provider>
