@@ -79,10 +79,14 @@ public class Token {
 
     @Override
     public String toString() {
-        return "(Sequence: " + sequence + ", Token Category: " + tokenCategory.getValue() + ", Position: (" + this.lin + ", " + this.col + "))\n";
+        return "(Sequence: " + sequence + ", Token Category: " + tokenCategory.getValue() + ", Position: (" + this.lin + ", " + this.col + "))";
     }
 
     public TokenCategory getTokenCategory() {
         return this.tokenCategory;
+    }
+
+    public String getSequence() {
+        return this.sequence;
     }
 }
