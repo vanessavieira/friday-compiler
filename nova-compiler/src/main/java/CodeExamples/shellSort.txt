@@ -23,11 +23,14 @@ void main() {
         int j = i - gap;
 
         while(j >= 0 and value < getValue(vet, j)) {
-          setValue(vet, j + gap, getValue(vet, j));
+          int k = j + gap;
+          int l = getValue(vet, j);
+          setValue(vet, k, l);
           j = j - gap;
         };
 
-        setValue(vet, j + gap, value);
+        k = j + gap;
+        setValue(vet, k, value);
       };
     };
   };

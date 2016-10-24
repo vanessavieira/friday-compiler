@@ -69,7 +69,7 @@ public class Lexer {
         lexer.add("shoot", Token.TokenCategory.PR_SHOOT);
         lexer.add("string|int|float|bool", Token.TokenCategory.TYPE_VALUE);
         lexer.add("True|False", Token.TokenCategory.BOOL_VALUE);
-        lexer.add("<|>|<=|>=", Token.TokenCategory.OP_REL1);
+        lexer.add("<=|>=|<|>", Token.TokenCategory.OP_REL1);
         lexer.add("==|!=", Token.TokenCategory.OP_REL2);
         lexer.add("=", Token.TokenCategory.OP_ATR);
         lexer.add("\\+|-", Token.TokenCategory.OP_AD);
