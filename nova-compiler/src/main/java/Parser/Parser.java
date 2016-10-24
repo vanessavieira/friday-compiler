@@ -96,31 +96,6 @@ public class Parser {
         }
     }
 
-    private void main() throws ParserException {
-        if (lookahead.getTokenCategory() == Token.TokenCategory.PR_VOID) {
-            nextToken();
-            if (lookahead.getTokenCategory() == Token.TokenCategory.PR_MAIN) {
-                nextToken();
-                if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
-                    nextToken();
-                    if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
-                        output.add("<main> ::= PR_VOID PR_MAIN AB_PAR FEC_PAR <scope>");
-                        nextToken();
-                        this.scope();
-                    } else {
-                        throw new ParserException("Unexpected symbol " + lookahead + " found!");
-                    }
-                } else {
-                    throw new ParserException("Unexpected symbol " + lookahead + " found!");
-                }
-            } else {
-                throw new ParserException("Unexpected symbol " + lookahead + " found!");
-            }
-        } else {
-            throw new ParserException("Unexpected symbol " + lookahead + " found!");
-        }
-    }
-
     private void function_declaration() throws ParserException {
         if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
             nextToken();
@@ -128,6 +103,7 @@ public class Parser {
                 nextToken();
                 this.parameters();
                 if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
+                    output.add("<function_declaration> ::= ID AB_PAR <parameters> FEC_PAR <scope>");
                     nextToken();
                     this.scope();
                 } else {
@@ -155,6 +131,7 @@ public class Parser {
             }
         } else if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
             String prod = "<commands> ::= " + lookahead.getSequence() + " <attribution_or_function_call> <commands>";
+            output.add(prod);
             nextToken();
             this.attribution_or_function_call();
             this.commands();
@@ -621,6 +598,7 @@ public class Parser {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
             }
         } else {
+            output.add("<declaration> ::= <attribution>");
             this.attribution();
         }
     }
@@ -839,6 +817,7 @@ public class Parser {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
             }
         } else {
+            output.add("<exp_aux>:: <atom_exp>");
             this.atom_exp();
         }
     }

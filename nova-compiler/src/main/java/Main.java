@@ -16,7 +16,7 @@ public class Main {
         File fibonacci = new File(path + "CodeExamples/fibonacci.txt");
         File shellsort = new File(path + "CodeExamples/shellSort.txt");
 
-        /*
+
         try {
             Lexer lexer = Lexer.getLexer();
 
@@ -33,12 +33,14 @@ public class Main {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
-        */
+
 
 
         Parser parser = new Parser();
 
         try {
+            parser.parse(helloWorld);
+            parser.parse(fibonacci);
             parser.parse(shellsort);
         } catch ( Exception e ) {
             System.err.println(e.getMessage());
