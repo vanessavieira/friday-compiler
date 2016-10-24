@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae9bc86d-c671-4f9a-aadd-db808aa7dbcf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token.java" afterPath="$PROJECT_DIR$/src/main/java/Lexer/Token.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Parser/Parser.java" afterPath="$PROJECT_DIR$/src/main/java/Parser/Parser.java" />
     </list>
     <ignored path="nova-compiler.iws" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="Parser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Parser/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="289" column="8" selection-start-line="289" selection-start-column="8" selection-end-line="289" selection-end-column="8" />
+            <state relative-caret-position="345">
+              <caret line="205" column="75" selection-start-line="205" selection-start-column="75" selection-end-line="205" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#299#307#0" expanded="true" />
@@ -79,18 +78,8 @@
       <file leaf-file-name="fibonacci.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CodeExamples/fibonacci.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LexerException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Lexer/LexerException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="450">
+              <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -137,10 +126,10 @@
         <option value="$PROJECT_DIR$/src/main/java/Parser/Lexer/Token.java" />
         <option value="$PROJECT_DIR$/src/main/java/Parser/ParserException.java" />
         <option value="$PROJECT_DIR$/src/main/java/CodeExamples/helloWorld.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/CodeExamples/fibonacci.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Lexer/Lexer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Lexer/Token.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CodeExamples/fibonacci.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Parser/Parser.java" />
       </list>
     </option>
@@ -827,12 +816,12 @@
       <workItem from="1477004744054" duration="36000" />
       <workItem from="1477004849118" duration="621000" />
       <workItem from="1477070488734" duration="31000" />
-      <workItem from="1477246886073" duration="13364000" />
+      <workItem from="1477246886073" duration="16207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48601000" />
+    <option name="totallyTimeSpent" value="51444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -998,67 +987,67 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>276</line>
+          <line>345</line>
           <properties />
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>264</line>
+          <line>333</line>
           <properties />
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>284</line>
+          <line>353</line>
           <properties />
           <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>252</line>
+          <line>321</line>
           <properties />
           <option name="timeStamp" value="222" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>226</line>
+          <line>295</line>
           <properties />
           <option name="timeStamp" value="223" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>217</line>
+          <line>286</line>
           <properties />
           <option name="timeStamp" value="224" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>214</line>
+          <line>283</line>
           <properties />
           <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>199</line>
+          <line>268</line>
           <properties />
           <option name="timeStamp" value="227" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>192</line>
+          <line>261</line>
           <properties />
           <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>182</line>
+          <line>251</line>
           <properties />
           <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>177</line>
+          <line>242</line>
           <properties />
           <option name="timeStamp" value="230" />
         </line-breakpoint>
@@ -1074,8 +1063,14 @@
           <properties />
           <option name="timeStamp" value="232" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
+          <line>246</line>
+          <properties />
+          <option name="timeStamp" value="233" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="233" />
+      <option name="time" value="234" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1533,6 +1528,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/CodeExamples/shellSort.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CodeExamples/helloWorld.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1543,16 +1546,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CodeExamples/fibonacci.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CodeExamples/shellSort.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        <state relative-caret-position="450">
+          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
           <folding />
         </state>
       </provider>
@@ -1580,8 +1575,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="289" column="8" selection-start-line="289" selection-start-column="8" selection-end-line="289" selection-end-column="8" />
+        <state relative-caret-position="345">
+          <caret line="205" column="75" selection-start-line="205" selection-start-column="75" selection-end-line="205" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#299#307#0" expanded="true" />
