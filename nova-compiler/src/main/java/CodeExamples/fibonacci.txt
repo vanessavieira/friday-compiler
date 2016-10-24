@@ -3,9 +3,8 @@ int fibonacci(int n) {
     int f2 = 1;
     int fi = 0;
 
-    printOut(0);
-    printOut("", "");
-    printOut(1);
+    printOut("0");
+    printOut("1");
 
     if (n == 0 or n == 1) {
       shoot 1;
