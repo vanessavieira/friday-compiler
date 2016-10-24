@@ -42,10 +42,13 @@ public class Parser {
             output.add("<program> ::= " + this.lookahead.getSequence() + " <program_aux>");
             this.nextToken();
             this.program_aux();
+        } else if (this.lookahead.getTokenCategory() == Token.TokenCategory.TYPE_VALUE) {
+            output.add("<program> ::=" + lookahead.getSequence() + " <function_declaration> <program>");
+            this.nextToken();
+            this.function_declaration();
+            this.program();
         } else {
-            output.add("<program> ::= <function_list> <main>");
-            this.function_list();
-            this.main();
+            output.add("<program> ::= empty");
         }
     }
 
@@ -66,25 +69,9 @@ public class Parser {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
             }
         } else {
-            output.add("<program_aux> ::= <function_list> <main>");
-            this.function_list();
-            this.main();
-        }
-    }
-
-    private void function_list() throws ParserException {
-        if (this.lookahead.getTokenCategory() == Token.TokenCategory.PR_VOID) {
-            output.add("<function_list> ::= " + lookahead.getSequence() + " <function_declaration> <function_list>");
-            this.nextToken();
+            output.add("<program_aux> ::= <function_declaration> <program>");
             this.function_declaration();
-            this.function_list();
-        } else if (this.lookahead.getTokenCategory() == Token.TokenCategory.TYPE_VALUE) {
-            output.add("<function_list> ::= " + lookahead.getSequence() + " <function_declaration> <function_list>");
-            this.nextToken();
-            this.function_declaration();
-            this.function_list();
-        } else {
-            output.add("<function_list> ::= empty");
+            this.program();
         }
     }
 
@@ -180,6 +167,212 @@ public class Parser {
                 this.printout_or_readin();
                 this.commands();
             }
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_IF) {
+            output.add("<commands> ::= PR_IF <ifelse> <commands>");
+            nextToken();
+            this.ifelse();
+            this.commands();
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_WHILE) {
+            output.add("<commands> ::= PR_WHILE <while> <commands>");
+            nextToken();
+            this.while_prod();
+            this.commands();
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_FOR) {
+            output.add("<commands> ::= PR_FOR <for> <commands>");
+            nextToken();
+            this.for_prod();
+            this.commands();
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_SHOOT) {
+            nextToken();
+            this.shoot();
+            if (lookahead.getTokenCategory() == Token.TokenCategory.SP) {
+                output.add("<commands> ::= PR_SHOOT <shoot> SP");
+                nextToken();
+            } else {
+                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+            }
+        } else {
+            output.add("<commands> ::= empty");
+        }
+    }
+
+    private void while_prod() throws ParserException {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
+            nextToken();
+            this.expression();
+            if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
+                output.add("<while> ::= AB_PAR <expression> FEC_PAR <scope>");
+                nextToken();
+                this.scope();
+            } else {
+                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+            }
+        } else {
+            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+        }
+    }
+
+    private void for_prod() throws ParserException {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
+            nextToken();
+            this.for_steps();
+            if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
+                output.add("<for> ::= AB_PAR <for_steps> FEC_PAR <scope>");
+                nextToken();
+                this.scope();
+            } else {
+                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+            }
+        } else {
+            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+        }
+    }
+
+    private void for_steps() throws ParserException {
+
+        if (lookahead.getTokenCategory() == Token.TokenCategory.TYPE_VALUE) {
+            nextToken();
+            if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+                nextToken();
+                if (lookahead.getTokenCategory() == Token.TokenCategory.OP_ATR) {
+                    nextToken();
+                    if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_INT) {
+                        nextToken();
+                        if (lookahead.getTokenCategory() == Token.TokenCategory.SP) {
+                            nextToken();
+                            if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+                                nextToken();
+                                if (lookahead.getTokenCategory() == Token.TokenCategory.OP_REL1) {
+                                    nextToken();
+                                    if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_INT) {
+                                        nextToken();
+                                        if (lookahead.getTokenCategory() == Token.TokenCategory.SP) {
+                                            nextToken();
+                                            if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+                                                nextToken();
+                                                if (lookahead.getTokenCategory() == Token.TokenCategory.OP_ATR) {
+                                                    nextToken();
+                                                    if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+                                                        nextToken();
+                                                        if (lookahead.getTokenCategory() == Token.TokenCategory.OP_AD) {
+                                                            nextToken();
+                                                            if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_INT) {
+                                                                output.add("<for_steps> ::= TYPE_VALUE ID OP_ATR CTE_INT SP ID OP_REL1 CTE_INT SP ID OP_ATR ID OP_AD CTE_INT");
+                                                                nextToken();
+                                                            } else {
+                                                                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                                                            }
+                                                        } else {
+                                                            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                                                        }
+                                                    } else {
+                                                        throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                                                    }
+                                                } else {
+                                                    throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                                                }
+                                            } else {
+                                                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                                            }
+                                        } else {
+                                            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                                        }
+                                    } else {
+                                        throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                                    }
+                                } else {
+                                    throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                                }
+                            } else {
+                                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                            }
+                        } else {
+                            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                        }
+                    } else {
+                        throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                    }
+                } else {
+                    throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                }
+            } else {
+                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+            }
+        } else {
+            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+        }
+    }
+
+    private void shoot() throws ParserException {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+            output.add("<shoot> ::= ID");
+            nextToken();
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_INT) {
+            output.add("<shoot> ::= CTE_INT");
+            nextToken();
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_STR) {
+            output.add("<shoot> ::= CTE_STR");
+            nextToken();
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_FLOAT) {
+            output.add("<shoot> ::= CTE_FLOAT");
+            nextToken();
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.BOOL_VALUE) {
+            output.add("<shoot> ::= BOOL_VALUE");
+            nextToken();
+        } else {
+            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+        }
+    }
+
+    private void ifelse() throws ParserException {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
+            nextToken();
+            this.expression();
+            if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
+                nextToken();
+                if (lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
+                    nextToken();
+                    this.commands();
+                    if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
+                        nextToken();
+                        this.else_prod();
+                        if (lookahead.getTokenCategory() == Token.TokenCategory.SP) {
+                            output.add("<ifelse> ::= AB_AR <expression> FEC_PAR AB_CH <commands> FEC_CH <else> SP");
+                            nextToken();
+                        } else {
+                            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                        }
+                    } else {
+                        throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                    }
+                } else {
+                    throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                }
+            } else {
+                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+            }
+        } else {
+            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+        }
+    }
+
+    private void else_prod() throws ParserException {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.PR_ELSE) {
+            nextToken();
+            if (lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
+                nextToken();
+                this.commands();
+                if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
+                    output.add("<else> ::= PR_ELSE AB_CH <commands> FEC_CH");
+                    nextToken();
+                } else {
+                    throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                }
+            } else {
+                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+            }
+        } else {
+            output.add("<else> ::= empty");
         }
     }
 
@@ -324,6 +517,7 @@ public class Parser {
             nextToken();
             this.value();
             if (lookahead.getTokenCategory() == Token.TokenCategory.SP) {
+                output.add("<attribution> ::= OP_ATR <value> SP");
                 nextToken();
             } else {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
@@ -523,8 +717,19 @@ public class Parser {
 
     private void atom_exp() throws ParserException {
         if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
-            output.add("<atom_exp> ::= ID");
             nextToken();
+            if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
+                nextToken();
+                this.parameters_call();
+                if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
+                    output.add("<atom_exp> ::= ID AB_PAR <parameters_call> FEC_PAR");
+                    nextToken();
+                } else {
+                    throw new ParserException("Unexpected symbol " + lookahead + " found!");
+                }
+            } else {
+                output.add("<atom_exp> ::= ID");
+            }
         } else if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_STR) {
             output.add("<atom_exp> ::= CTE_STR");
             nextToken();
@@ -552,7 +757,11 @@ public class Parser {
         if ( tokens.isEmpty() ) {
             lookahead = new Token( Token.TokenCategory.EOF, "", -1, -1);
         } else {
-            lookahead = tokens.getFirst();
+            if (tokens.getFirst().getTokenCategory() == Token.TokenCategory.COMMENT) {
+                nextToken();
+            } else {
+                lookahead = tokens.getFirst();
+            }
         }
     }
 

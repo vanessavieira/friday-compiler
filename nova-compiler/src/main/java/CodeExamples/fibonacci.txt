@@ -3,9 +3,6 @@ int fibonacci(int n) {
     int f2 = 1;
     int fi = 0;
 
-    printOut("0");
-    printOut("1");
-
     if (n == 0 or n == 1) {
       shoot 1;
     };
@@ -14,8 +11,6 @@ int fibonacci(int n) {
       fi = f1 + f2;
       f1 = f2;
       f2 = fi;
-      printOut("", "");
-      printOut("fi");
     };
 
     shoot fi;

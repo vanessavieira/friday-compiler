@@ -39,7 +39,7 @@ public class Main {
         Parser parser = new Parser();
 
         try {
-            parser.parse(fibonacci);
+            parser.parse(shellsort);
         } catch ( Exception e ) {
             System.err.println(e.getMessage());
         }
