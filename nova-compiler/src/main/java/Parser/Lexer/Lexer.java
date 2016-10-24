@@ -1,4 +1,4 @@
-package Lexer;
+package Parser.Lexer;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -25,8 +25,8 @@ public class Lexer {
 
         /**
          * Construct TokenInfo within its values.
-         * @param regex Lexer.Token Regex Pattern
-         * @param tokenCategory Lexer.Token Category.
+         * @param regex Parser.Lexer.Token Regex Pattern
+         * @param tokenCategory Parser.Lexer.Token Category.
          */
         public TokenInfo(Pattern regex,
                          Token.TokenCategory tokenCategory) {

@@ -3,8 +3,9 @@
  */
 
 import java.io.File;
-import Lexer.*;
+
 import Parser.*;
+import Parser.Lexer.*;
 
 public class Main {
 
@@ -33,8 +34,6 @@ public class Main {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
-
-
 
         Parser parser = new Parser();
 

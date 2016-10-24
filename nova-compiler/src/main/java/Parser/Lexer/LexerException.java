@@ -1,4 +1,4 @@
-package Lexer;
+package Parser.Lexer;
 
 /**
  * Created by rubenspessoa on 04/09/16.

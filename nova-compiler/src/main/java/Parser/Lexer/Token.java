@@ -1,4 +1,4 @@
-package Lexer;
+package Parser.Lexer;
 
 /**
  * Created by rubenspessoa on 04/09/16.
@@ -62,8 +62,8 @@ public class Token {
      * Construct the token representation within its values
      * @param tokenCategory Category Identifier int
      * @param sequence String that represents the token
-     * @param lin Lexer.Token line in input
-     * @param col Lexer.Token column in input
+     * @param lin Parser.Lexer.Token line in input
+     * @param col Parser.Lexer.Token column in input
      */
 
     public Token(TokenCategory tokenCategory,
@@ -79,7 +79,7 @@ public class Token {
 
     @Override
     public String toString() {
-        return "(Sequence: " + sequence + ", Token Category: " + tokenCategory.getValue() + ", Position: (" + this.lin + ", " + this.col + "))";
+        return "(Sequence: " + sequence + ", Token Category: " + tokenCategory.getValue() + ", Position: (" + this.lin + ", " + this.col + "))\n";
     }
 
     public TokenCategory getTokenCategory() {
