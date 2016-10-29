@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae9bc86d-c671-4f9a-aadd-db808aa7dbcf" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Lexer/Lexer.java" afterPath="$PROJECT_DIR$/src/main/java/Parser/Lexer/Lexer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Lexer/LexerException.java" afterPath="$PROJECT_DIR$/src/main/java/Parser/Lexer/LexerException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Lexer/Token.java" afterPath="$PROJECT_DIR$/src/main/java/Parser/Lexer/Token.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Specification/AB2/Gramáticas.pdf" afterPath="$PROJECT_DIR$/../Specification/AB2/Gramáticas.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Parser/Parser.java" afterPath="$PROJECT_DIR$/src/main/java/Parser/Parser.java" />
     </list>
@@ -28,7 +25,55 @@
     <favorites_list name="nova-compiler" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Parser/Parser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="872" column="5" selection-start-line="872" selection-start-column="5" selection-end-line="872" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#parse#0;class#Parser#0" expanded="false" />
+                <element signature="method#parse#1;class#Parser#0" expanded="false" />
+                <element signature="method#program#0;class#Parser#0" expanded="false" />
+                <element signature="method#program_aux#0;class#Parser#0" expanded="false" />
+                <element signature="method#scope#0;class#Parser#0" expanded="false" />
+                <element signature="method#function_declaration#0;class#Parser#0" expanded="false" />
+                <element signature="method#commands#0;class#Parser#0" expanded="false" />
+                <element signature="method#while_prod#0;class#Parser#0" expanded="false" />
+                <element signature="method#for_prod#0;class#Parser#0" expanded="false" />
+                <element signature="method#for_steps#0;class#Parser#0" expanded="false" />
+                <element signature="method#shoot#0;class#Parser#0" expanded="false" />
+                <element signature="method#ifelse#0;class#Parser#0" expanded="false" />
+                <element signature="method#else_prod#0;class#Parser#0" expanded="false" />
+                <element signature="method#msg#0;class#Parser#0" expanded="false" />
+                <element signature="method#attribution_or_function_call#0;class#Parser#0" expanded="false" />
+                <element signature="method#parameters_call#0;class#Parser#0" expanded="false" />
+                <element signature="method#declaration#0;class#Parser#0" expanded="false" />
+                <element signature="method#declaration_aux#0;class#Parser#0" expanded="false" />
+                <element signature="method#attribution#0;class#Parser#0" expanded="false" />
+                <element signature="method#value#0;class#Parser#0" expanded="false" />
+                <element signature="method#array#0;class#Parser#0" expanded="false" />
+                <element signature="method#elements#0;class#Parser#0" expanded="false" />
+                <element signature="method#parameters#0;class#Parser#0" expanded="false" />
+                <element signature="method#expression#0;class#Parser#0" expanded="false" />
+                <element signature="method#expression_aux#0;class#Parser#0" expanded="false" />
+                <element signature="method#eq_expression#0;class#Parser#0" expanded="false" />
+                <element signature="method#eq_expression_aux#0;class#Parser#0" expanded="false" />
+                <element signature="method#comparative_exp#0;class#Parser#0" expanded="false" />
+                <element signature="method#comparative_exp_aux#0;class#Parser#0" expanded="false" />
+                <element signature="method#add_exp#0;class#Parser#0" expanded="false" />
+                <element signature="method#add_exp_aux#0;class#Parser#0" expanded="false" />
+                <element signature="method#mult_exp#0;class#Parser#0" expanded="false" />
+                <element signature="method#mult_exp_aux#0;class#Parser#0" expanded="false" />
+                <element signature="method#neg_exp#0;class#Parser#0" expanded="false" />
+                <element signature="method#exp_aux#0;class#Parser#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,9 +107,9 @@
         <option value="$PROJECT_DIR$/src/main/java/CodeExamples/fibonacci.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Lexer/Lexer.java" />
         <option value="$PROJECT_DIR$/src/main/java/CodeExamples/shellSort.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/Parser/Parser.java" />
         <option value="$PROJECT_DIR$/src/main/java/Lexer/Token.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Parser/Parser.java" />
       </list>
     </option>
   </component>
@@ -80,10 +125,15 @@
         <option name="mavenHome" value="Bundled (Maven 3)" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -110,8 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,7 +260,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -222,7 +272,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../enrollmentSystem/rest/drca" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -699,31 +749,32 @@
       <workItem from="1477004849118" duration="621000" />
       <workItem from="1477070488734" duration="31000" />
       <workItem from="1477246886073" duration="25336000" />
+      <workItem from="1477317882832" duration="62000" />
+      <workItem from="1477712498138" duration="4269000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60573000" />
+    <option name="totallyTimeSpent" value="64904000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.49353796" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.49353796" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45479453" sideWeight="0.5129241" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.48707592" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32772276" sideWeight="0.48707592" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2454739" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24474959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -734,6 +785,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -751,15 +803,15 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.49353796" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739726" sideWeight="0.49353796" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32739726" sideWeight="0.48707592" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32772276" sideWeight="0.48707592" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2454739" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24474959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -779,427 +831,415 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="197" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
           <line>43</line>
-          <properties />
-          <option name="timeStamp" value="201" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>47</line>
           <properties />
           <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>48</line>
+          <line>44</line>
           <properties />
           <option name="timeStamp" value="203" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>63</line>
+          <line>59</line>
           <properties />
           <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>73</line>
+          <line>69</line>
           <properties />
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>72</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="208" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>81</line>
+          <line>78</line>
           <properties />
           <option name="timeStamp" value="213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>103</line>
+          <line>100</line>
           <properties />
           <option name="timeStamp" value="216" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>107</line>
+          <line>103</line>
           <properties />
           <option name="timeStamp" value="218" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>701</line>
+          <line>699</line>
           <properties />
           <option name="timeStamp" value="219" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>689</line>
+          <line>687</line>
           <properties />
           <option name="timeStamp" value="220" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>709</line>
+          <line>707</line>
           <properties />
           <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>676</line>
+          <line>674</line>
           <properties />
           <option name="timeStamp" value="222" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>646</line>
+          <line>645</line>
           <properties />
           <option name="timeStamp" value="223" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>637</line>
+          <line>635</line>
           <properties />
           <option name="timeStamp" value="224" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>634</line>
+          <line>632</line>
           <properties />
           <option name="timeStamp" value="226" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>611</line>
+          <line>609</line>
           <properties />
           <option name="timeStamp" value="228" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>601</line>
+          <line>599</line>
           <properties />
           <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>591</line>
+          <line>589</line>
           <properties />
           <option name="timeStamp" value="230" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>127</line>
+          <line>123</line>
           <properties />
           <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>126</line>
+          <line>122</line>
           <properties />
           <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>595</line>
+          <line>593</line>
           <properties />
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>135</line>
+          <line>131</line>
           <properties />
           <option name="timeStamp" value="234" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>136</line>
+          <line>132</line>
           <properties />
           <option name="timeStamp" value="235" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>144</line>
+          <line>140</line>
           <properties />
           <option name="timeStamp" value="236" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>143</line>
+          <line>139</line>
           <properties />
           <option name="timeStamp" value="237" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>149</line>
+          <line>145</line>
           <properties />
           <option name="timeStamp" value="238" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>150</line>
+          <line>146</line>
           <properties />
           <option name="timeStamp" value="239" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>425</line>
+          <line>422</line>
           <properties />
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>430</line>
+          <line>427</line>
           <properties />
           <option name="timeStamp" value="242" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>433</line>
+          <line>430</line>
           <properties />
           <option name="timeStamp" value="243" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>459</line>
+          <line>456</line>
           <properties />
           <option name="timeStamp" value="244" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>489</line>
+          <line>486</line>
           <properties />
           <option name="timeStamp" value="245" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>510</line>
+          <line>508</line>
           <properties />
           <option name="timeStamp" value="247" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>525</line>
+          <line>523</line>
           <properties />
           <option name="timeStamp" value="249" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>530</line>
+          <line>528</line>
           <properties />
           <option name="timeStamp" value="250" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>537</line>
+          <line>536</line>
           <properties />
           <option name="timeStamp" value="251" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>551</line>
+          <line>549</line>
           <properties />
           <option name="timeStamp" value="252" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>558</line>
+          <line>556</line>
           <properties />
           <option name="timeStamp" value="253" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>562</line>
+          <line>560</line>
           <properties />
           <option name="timeStamp" value="255" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>566</line>
+          <line>564</line>
           <properties />
           <option name="timeStamp" value="256" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>570</line>
+          <line>568</line>
           <properties />
           <option name="timeStamp" value="257" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>573</line>
+          <line>571</line>
           <properties />
           <option name="timeStamp" value="258" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>575</line>
+          <line>573</line>
           <properties />
           <option name="timeStamp" value="259" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>659</line>
+          <line>657</line>
           <properties />
           <option name="timeStamp" value="261" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>663</line>
+          <line>661</line>
           <properties />
           <option name="timeStamp" value="262" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>667</line>
+          <line>665</line>
           <properties />
           <option name="timeStamp" value="263" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>671</line>
+          <line>669</line>
           <properties />
           <option name="timeStamp" value="265" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>675</line>
+          <line>673</line>
           <properties />
           <option name="timeStamp" value="266" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>715</line>
+          <line>713</line>
           <properties />
           <option name="timeStamp" value="268" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>716</line>
+          <line>714</line>
           <properties />
           <option name="timeStamp" value="269" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>723</line>
+          <line>721</line>
           <properties />
           <option name="timeStamp" value="271" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>727</line>
+          <line>725</line>
           <properties />
           <option name="timeStamp" value="272" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>736</line>
+          <line>734</line>
           <properties />
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>735</line>
+          <line>733</line>
           <properties />
           <option name="timeStamp" value="274" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>743</line>
+          <line>741</line>
           <properties />
           <option name="timeStamp" value="275" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>751</line>
+          <line>749</line>
           <properties />
           <option name="timeStamp" value="276" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>752</line>
+          <line>750</line>
           <properties />
           <option name="timeStamp" value="277" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>759</line>
+          <line>757</line>
           <properties />
           <option name="timeStamp" value="278" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>768</line>
+          <line>766</line>
           <properties />
           <option name="timeStamp" value="279" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>767</line>
+          <line>765</line>
           <properties />
           <option name="timeStamp" value="280" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>775</line>
+          <line>773</line>
           <properties />
           <option name="timeStamp" value="283" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>783</line>
+          <line>781</line>
           <properties />
           <option name="timeStamp" value="284" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>784</line>
+          <line>782</line>
           <properties />
           <option name="timeStamp" value="286" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>791</line>
+          <line>789</line>
           <properties />
           <option name="timeStamp" value="287" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>801</line>
+          <line>799</line>
           <properties />
           <option name="timeStamp" value="289" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>804</line>
+          <line>802</line>
           <properties />
           <option name="timeStamp" value="290" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>811</line>
+          <line>810</line>
           <properties />
           <option name="timeStamp" value="291" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>820</line>
+          <line>818</line>
           <properties />
           <option name="timeStamp" value="292" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>826</line>
+          <line>825</line>
           <properties />
           <option name="timeStamp" value="293" />
         </line-breakpoint>
@@ -1235,108 +1275,150 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>404</line>
+          <line>400</line>
           <properties />
           <option name="timeStamp" value="301" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>407</line>
+          <line>403</line>
           <properties />
           <option name="timeStamp" value="302" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>413</line>
+          <line>409</line>
           <properties />
           <option name="timeStamp" value="304" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>410</line>
+          <line>406</line>
           <properties />
           <option name="timeStamp" value="306" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>416</line>
+          <line>412</line>
           <properties />
           <option name="timeStamp" value="307" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>418</line>
+          <line>414</line>
           <properties />
           <option name="timeStamp" value="308" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>198</line>
+          <line>194</line>
           <properties />
           <option name="timeStamp" value="309" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>194</line>
+          <line>191</line>
           <properties />
           <option name="timeStamp" value="311" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>182</line>
+          <line>178</line>
           <properties />
           <option name="timeStamp" value="313" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>178</line>
+          <line>175</line>
           <properties />
           <option name="timeStamp" value="314" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>154</line>
+          <line>150</line>
           <properties />
           <option name="timeStamp" value="315" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>155</line>
+          <line>151</line>
           <properties />
           <option name="timeStamp" value="316" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>159</line>
+          <line>155</line>
           <properties />
           <option name="timeStamp" value="317" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>160</line>
+          <line>156</line>
           <properties />
           <option name="timeStamp" value="318" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>163</line>
+          <line>160</line>
           <properties />
           <option name="timeStamp" value="320" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>618</line>
+          <line>617</line>
           <properties />
           <option name="timeStamp" value="322" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
-          <line>829</line>
+          <line>828</line>
           <properties />
           <option name="timeStamp" value="324" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="331" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="332" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
+          <line>17</line>
+          <properties />
+          <option name="timeStamp" value="333" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
+          <line>95</line>
+          <properties />
+          <option name="timeStamp" value="334" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
+          <line>516</line>
+          <properties />
+          <option name="timeStamp" value="337" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
+          <line>580</line>
+          <properties />
+          <option name="timeStamp" value="338" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Parser/Parser.java</url>
+          <line>682</line>
+          <properties />
+          <option name="timeStamp" value="339" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="327" />
+      <option name="time" value="342" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1349,13 +1431,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1363,7 +1438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1373,6 +1447,41 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#parse#0;class#Parser#0" expanded="false" />
+            <element signature="method#parse#1;class#Parser#0" expanded="false" />
+            <element signature="method#program#0;class#Parser#0" expanded="false" />
+            <element signature="method#program_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#scope#0;class#Parser#0" expanded="false" />
+            <element signature="method#function_declaration#0;class#Parser#0" expanded="false" />
+            <element signature="method#commands#0;class#Parser#0" expanded="false" />
+            <element signature="method#while_prod#0;class#Parser#0" expanded="false" />
+            <element signature="method#for_prod#0;class#Parser#0" expanded="false" />
+            <element signature="method#for_steps#0;class#Parser#0" expanded="false" />
+            <element signature="method#shoot#0;class#Parser#0" expanded="false" />
+            <element signature="method#ifelse#0;class#Parser#0" expanded="false" />
+            <element signature="method#else_prod#0;class#Parser#0" expanded="false" />
+            <element signature="method#msg#0;class#Parser#0" expanded="false" />
+            <element signature="method#attribution_or_function_call#0;class#Parser#0" expanded="false" />
+            <element signature="method#parameters_call#0;class#Parser#0" expanded="false" />
+            <element signature="method#declaration#0;class#Parser#0" expanded="false" />
+            <element signature="method#declaration_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#attribution#0;class#Parser#0" expanded="false" />
+            <element signature="method#value#0;class#Parser#0" expanded="false" />
+            <element signature="method#array#0;class#Parser#0" expanded="false" />
+            <element signature="method#elements#0;class#Parser#0" expanded="false" />
+            <element signature="method#parameters#0;class#Parser#0" expanded="false" />
+            <element signature="method#expression#0;class#Parser#0" expanded="false" />
+            <element signature="method#expression_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#eq_expression#0;class#Parser#0" expanded="false" />
+            <element signature="method#eq_expression_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#comparative_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#comparative_exp_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#add_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#add_exp_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#mult_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#mult_exp_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#neg_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#exp_aux#0;class#Parser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1392,7 +1501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1410,13 +1518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1424,7 +1525,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1434,6 +1534,41 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#parse#0;class#Parser#0" expanded="false" />
+            <element signature="method#parse#1;class#Parser#0" expanded="false" />
+            <element signature="method#program#0;class#Parser#0" expanded="false" />
+            <element signature="method#program_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#scope#0;class#Parser#0" expanded="false" />
+            <element signature="method#function_declaration#0;class#Parser#0" expanded="false" />
+            <element signature="method#commands#0;class#Parser#0" expanded="false" />
+            <element signature="method#while_prod#0;class#Parser#0" expanded="false" />
+            <element signature="method#for_prod#0;class#Parser#0" expanded="false" />
+            <element signature="method#for_steps#0;class#Parser#0" expanded="false" />
+            <element signature="method#shoot#0;class#Parser#0" expanded="false" />
+            <element signature="method#ifelse#0;class#Parser#0" expanded="false" />
+            <element signature="method#else_prod#0;class#Parser#0" expanded="false" />
+            <element signature="method#msg#0;class#Parser#0" expanded="false" />
+            <element signature="method#attribution_or_function_call#0;class#Parser#0" expanded="false" />
+            <element signature="method#parameters_call#0;class#Parser#0" expanded="false" />
+            <element signature="method#declaration#0;class#Parser#0" expanded="false" />
+            <element signature="method#declaration_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#attribution#0;class#Parser#0" expanded="false" />
+            <element signature="method#value#0;class#Parser#0" expanded="false" />
+            <element signature="method#array#0;class#Parser#0" expanded="false" />
+            <element signature="method#elements#0;class#Parser#0" expanded="false" />
+            <element signature="method#parameters#0;class#Parser#0" expanded="false" />
+            <element signature="method#expression#0;class#Parser#0" expanded="false" />
+            <element signature="method#expression_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#eq_expression#0;class#Parser#0" expanded="false" />
+            <element signature="method#eq_expression_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#comparative_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#comparative_exp_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#add_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#add_exp_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#mult_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#mult_exp_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#neg_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#exp_aux#0;class#Parser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1453,7 +1588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1471,13 +1605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1485,7 +1612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1495,6 +1621,41 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#parse#0;class#Parser#0" expanded="false" />
+            <element signature="method#parse#1;class#Parser#0" expanded="false" />
+            <element signature="method#program#0;class#Parser#0" expanded="false" />
+            <element signature="method#program_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#scope#0;class#Parser#0" expanded="false" />
+            <element signature="method#function_declaration#0;class#Parser#0" expanded="false" />
+            <element signature="method#commands#0;class#Parser#0" expanded="false" />
+            <element signature="method#while_prod#0;class#Parser#0" expanded="false" />
+            <element signature="method#for_prod#0;class#Parser#0" expanded="false" />
+            <element signature="method#for_steps#0;class#Parser#0" expanded="false" />
+            <element signature="method#shoot#0;class#Parser#0" expanded="false" />
+            <element signature="method#ifelse#0;class#Parser#0" expanded="false" />
+            <element signature="method#else_prod#0;class#Parser#0" expanded="false" />
+            <element signature="method#msg#0;class#Parser#0" expanded="false" />
+            <element signature="method#attribution_or_function_call#0;class#Parser#0" expanded="false" />
+            <element signature="method#parameters_call#0;class#Parser#0" expanded="false" />
+            <element signature="method#declaration#0;class#Parser#0" expanded="false" />
+            <element signature="method#declaration_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#attribution#0;class#Parser#0" expanded="false" />
+            <element signature="method#value#0;class#Parser#0" expanded="false" />
+            <element signature="method#array#0;class#Parser#0" expanded="false" />
+            <element signature="method#elements#0;class#Parser#0" expanded="false" />
+            <element signature="method#parameters#0;class#Parser#0" expanded="false" />
+            <element signature="method#expression#0;class#Parser#0" expanded="false" />
+            <element signature="method#expression_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#eq_expression#0;class#Parser#0" expanded="false" />
+            <element signature="method#eq_expression_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#comparative_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#comparative_exp_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#add_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#add_exp_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#mult_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#mult_exp_aux#0;class#Parser#0" expanded="false" />
+            <element signature="method#neg_exp#0;class#Parser#0" expanded="false" />
+            <element signature="method#exp_aux#0;class#Parser#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1514,7 +1675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1532,13 +1692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1546,7 +1699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1564,13 +1716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="76" column="20" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1588,13 +1733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1140">
           <caret line="76" column="20" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1612,13 +1750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1890">
           <caret line="172" column="41" selection-start-line="172" selection-start-column="41" selection-end-line="172" selection-end-column="41" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1626,7 +1757,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1651,13 +1781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1689,13 +1812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1720,13 +1836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1774,7 +1883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1782,13 +1890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-978">
           <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
-          <folding>
-            <element signature="docComment;class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="class#TokenInfo#0;class#Lexer#0" expanded="false" />
-            <element signature="method#Lexer#0;class#Lexer#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#Lexer#0" expanded="false" />
-            <element signature="method#add#0;class#Lexer#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1796,7 +1897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1804,7 +1904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="27" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1812,17 +1911,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="2" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Parser/Lexer/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="81" column="144" selection-start-line="81" selection-start-column="144" selection-end-line="81" selection-end-column="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="808" column="50" selection-start-line="808" selection-start-column="50" selection-end-line="808" selection-end-column="50" />
+        <state relative-caret-position="319">
+          <caret line="872" column="5" selection-start-line="872" selection-start-column="5" selection-end-line="872" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#306#314#0" expanded="true" />
             <element signature="method#parse#0;class#Parser#0" expanded="false" />
             <element signature="method#parse#1;class#Parser#0" expanded="false" />
             <element signature="method#program#0;class#Parser#0" expanded="false" />
@@ -1836,7 +1950,6 @@
             <element signature="method#shoot#0;class#Parser#0" expanded="false" />
             <element signature="method#ifelse#0;class#Parser#0" expanded="false" />
             <element signature="method#else_prod#0;class#Parser#0" expanded="false" />
-            <element signature="method#printout_or_readin#0;class#Parser#0" expanded="false" />
             <element signature="method#msg#0;class#Parser#0" expanded="false" />
             <element signature="method#attribution_or_function_call#0;class#Parser#0" expanded="false" />
             <element signature="method#parameters_call#0;class#Parser#0" expanded="false" />
@@ -1859,25 +1972,6 @@
             <element signature="method#mult_exp_aux#0;class#Parser#0" expanded="false" />
             <element signature="method#neg_exp#0;class#Parser#0" expanded="false" />
             <element signature="method#exp_aux#0;class#Parser#0" expanded="false" />
-            <element signature="method#atom_exp#0;class#Parser#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Parser/Lexer/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="81" column="144" selection-start-line="81" selection-start-column="144" selection-end-line="81" selection-end-column="144" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

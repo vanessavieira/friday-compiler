@@ -3,9 +3,9 @@
  */
 
 import java.io.File;
+import java.util.List;
 
 import Parser.*;
-import Parser.Lexer.*;
 
 public class Main {
 
@@ -17,30 +17,17 @@ public class Main {
         File fibonacci = new File(path + "CodeExamples/fibonacci.txt");
         File shellsort = new File(path + "CodeExamples/shellSort.txt");
 
-
-        try {
-            Lexer lexer = Lexer.getLexer();
-
-            lexer.lex(helloWorld);
-            System.out.println(lexer.getTokens());
-
-            lexer.lex(fibonacci);
-            System.out.println(lexer.getTokens());
-
-            lexer.lex(shellsort);
-            System.out.println(lexer.getTokens());
-
-
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-        }
-
         Parser parser = new Parser();
 
         try {
             parser.parse(helloWorld);
             parser.parse(fibonacci);
-            parser.parse(shellsort);
+            List<String> output = parser.parse(shellsort);
+
+            for (String prod : output) {
+                System.out.println(prod);
+            }
+
         } catch ( Exception e ) {
             System.err.println(e.getMessage());
         }
