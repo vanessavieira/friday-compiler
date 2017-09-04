@@ -1,3 +1,4 @@
-void main() {
-    printOut("Alo Mundo!");
-};
+Fun Integer main() {
+	Print("Alô Mundo!");
+	Answer 0;
+}

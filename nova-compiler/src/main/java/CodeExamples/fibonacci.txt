@@ -1,25 +1,38 @@
-int fibonacci(int n) {
-    int f1 = 0;
-    int f2 = 1;
-    int fi = 0;
+Funfun {
+	Fun Integer Fibonacci(Integer n);
+}
 
-    if (n == 0 or n == 1) {
-      shoot 1;
-    };
+Fun Integer Fibonacci(Integer n) {
+	FunInternDec {
+		Integer a;
+		Integer b;
+		Integer total;
+		Integer i;
+	}
+    
+	a = 1;
+	b = 1
+	
+	While(i <= n) {
+		total  = a + b;
+		a = b;
+		b = total;
+	
+		i++;
+	}
+	Answer b;
+}
 
-    while(fi < n) {
-      fi = f1 + f2;
-      f1 = f2;
-      f2 = fi;
-    };
-
-    shoot fi;
-};
-
-void main() {
-    int n;
-    readIn(n);
-
-    int fib = fibonacci(n);
-    # do something with fib
-};
+Fun Integer main() {
+		FunInternDec {
+			Integer n;
+			Integer resposta;
+        	}
+	
+    Read(Integer n);
+    
+	resposta = Fibonacci(n);
+	Print(resposta ++ " ");
+    
+	Answer 0;
+}

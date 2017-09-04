@@ -1,36 +1,57 @@
-void main() {
-    int size;
-    readIn(size);
+Funfun {
+	Fun Integer ShellSort(Vetor[], Integer n);
+}
 
-    int vet::size;
+Fun Void ShellSort(Integer vetor[], Integer n) {
+	FunInternDec {
+    	Integer a;
+    	Integer b;
+    	Integer i;
+    	Integer j;
+    }
+    
+    a = 1;
+    
+	While(a < n) {
+		a = a * 3 + 1;
+	}
+	While (a > 0) {
+		Repeat i Until n {
+			b = vetor[i];
+			j = i;
 
-    for (int i = 0; i < size; i = i + 1) {
-      int x;
-      readIn(x);
-      add(vet, x);
-    };
+			While (a <= j && vetor[j - a ] < b) {
+				vetor[j] = vetor[j - a];
+				j = j - a;
+			}
+			vetor[j] = b;
+		}
+        
+		a = a / 2;
+	}
+}
 
-    int value;
-    int gap = 1;
-    while(gap < size) {
-      gap = 3 * gap + 1;
-    };
+Fun Integer main() {
 
-    while(gap > 1) {
-      gap = gap / 3;
-      for (int i = gap; i < size; i = i + 1) {
-        value = getValue(vet, i);
-        int j = i - gap;
-
-        while(j >= 0 and value < getValue(vet, j)) {
-          int k = j + gap;
-          int l = getValue(vet, j);
-          setValue(vet, k, l);
-          j = j - gap;
-        };
-
-        k = j + gap;
-        setValue(vet, k, value);
-      };
-    };
-  };
+	FunInternDec {
+		Integer = a;
+		Integer = b[100];
+		Integer = j;
+	}
+    
+	Read(a);
+ 	
+	Repeat j = 1 Until 100 {
+		Print("Digite um valor: ");
+		Read(b[i]);
+	}
+        
+	ShellSort(b[100], a);
+    
+	Printf("Valores ordenados: ");
+	Repeat j = 1 Until 100 {
+		Print(b[i] ++ " ");
+	}
+    
+	Answer 0;
+}
