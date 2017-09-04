@@ -56,8 +56,7 @@ public class Lexer {
     private static Lexer createLexer() throws Exception {
         Lexer lexer = new Lexer();
 
-        lexer.add("Read", Token.TokenCategory.PR_READ);
-        lexer.add("Print", Token.TokenCategory.PR_PRINT);
+        lexer.add("Read|Print", Token.TokenCategory.PR_IO);
         lexer.add("Void", Token.TokenCategory.PR_VOID);
         lexer.add("Main", Token.TokenCategory.PR_MAIN);
         lexer.add("If", Token.TokenCategory.PR_IF);
