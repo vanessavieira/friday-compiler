@@ -1,8 +1,5 @@
 package Parser.Lexer;
 
-/**
- * Created by rubenspessoa on 04/09/16.
- */
 public class Token {
 
     /**
@@ -10,38 +7,44 @@ public class Token {
      */
     public enum TokenCategory {
 
-        EOF(-1),
+        EOF(0),
         ID(1),
         CTE_FLOAT(2),
         CTE_INT(3),
-        CTE_STR(4),
+        CTE_CHAR(4),
         OP_ATR(5),
         OP_REL1(6),
         OP_REL2(7),
         OP_AD(8),
         OP_MULT(9),
-        COMMENT(10),
-        VECTOR_AUX(11),
-        OP_AND(12),
-        OP_OR(13),
-        OP_NOT(14),
-        PR_IF(15),
-        PR_ELSE(16),
-        PR_SHOOT(17),
-        PR_WHILE(18),
-        PR_FOR(19),
-        TYPE_VALUE(20),
-        BOOL_VALUE(21),
-        SP(22),
-        AB_PAR(23),
-        FEC_PAR(24),
-        AB_CH(25),
-        FEC_CH(26),
-        AB_COL(27),
-        FEC_COL(28),
-        PR_VOID(29),
-        PR_IO(30),
-        PR_MAIN(31);
+        OP_AND(10),
+        OP_OR(11),
+        OP_NOT(12),
+        COMMENT(13),
+        VECTOR_AUX(14),
+        PR_FUN(15),
+        PR_FUNFUN(16),
+        PR_FUNGLOBALDEC(17),
+        PR_FUNINTERNDEC(18),
+        PR_ANSWER(19),
+        PR_IF(20),
+        PR_ELSE(21),
+        PR_WHILE(22),
+        PR_REPEAT(23),
+        PR_UNTIL(24),
+        PR_READ(25),
+        PR_PRINT(26),
+        TYPE_VALUE(27),
+        BOOL_VALUE(28),
+        SEP(29),
+        AB_PAR(30),
+        FEC_PAR(31),
+        AB_CH(32),
+        FEC_CH(33),
+        AB_COL(34),
+        FEC_COL(35),
+        PR_VOID(36),
+        PR_MAIN(37);
 
         private int value;
 

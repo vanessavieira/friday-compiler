@@ -10,9 +10,6 @@ import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by rubenspessoa on 04/09/16.
- */
 public class Lexer {
 
     /**
@@ -59,25 +56,31 @@ public class Lexer {
     private static Lexer createLexer() throws Exception {
         Lexer lexer = new Lexer();
 
-        lexer.add("readIn|printOut", Token.TokenCategory.PR_IO);
-        lexer.add("void", Token.TokenCategory.PR_VOID);
-        lexer.add("main", Token.TokenCategory.PR_MAIN);
-        lexer.add("if", Token.TokenCategory.PR_IF);
-        lexer.add("else", Token.TokenCategory.PR_ELSE);
-        lexer.add("while", Token.TokenCategory.PR_WHILE);
-        lexer.add("for", Token.TokenCategory.PR_FOR);
-        lexer.add("shoot", Token.TokenCategory.PR_SHOOT);
-        lexer.add("string|int|float|bool", Token.TokenCategory.TYPE_VALUE);
+        lexer.add("Read", Token.TokenCategory.PR_READ);
+        lexer.add("Print", Token.TokenCategory.PR_PRINT);
+        lexer.add("Void", Token.TokenCategory.PR_VOID);
+        lexer.add("Main", Token.TokenCategory.PR_MAIN);
+        lexer.add("If", Token.TokenCategory.PR_IF);
+        lexer.add("Else", Token.TokenCategory.PR_ELSE);
+        lexer.add("While", Token.TokenCategory.PR_WHILE);
+        lexer.add("Fun", Token.TokenCategory.PR_FUN);
+        lexer.add("Repeat", Token.TokenCategory.PR_REPEAT);
+        lexer.add("Until", Token.TokenCategory.PR_UNTIL);
+        lexer.add("Funfun", Token.TokenCategory.PR_FUNFUN);
+        lexer.add("FunGlobalDec", Token.TokenCategory.PR_FUNGLOBALDEC);
+        lexer.add("FunInternDec", Token.TokenCategory.PR_FUNINTERNDEC);
+        lexer.add("Answer", Token.TokenCategory.PR_ANSWER);
+        lexer.add("CharacterArray|Integer|Float|Bool", Token.TokenCategory.TYPE_VALUE);
         lexer.add("True|False", Token.TokenCategory.BOOL_VALUE);
         lexer.add("<=|>=|<|>", Token.TokenCategory.OP_REL1);
         lexer.add("==|!=", Token.TokenCategory.OP_REL2);
         lexer.add("=", Token.TokenCategory.OP_ATR);
         lexer.add("\\+|-", Token.TokenCategory.OP_AD);
         lexer.add("\\*|/|%", Token.TokenCategory.OP_MULT);
-        lexer.add("and", Token.TokenCategory.OP_AND);
-        lexer.add("or", Token.TokenCategory.OP_OR);
-        lexer.add("not", Token.TokenCategory.OP_NOT);
-        lexer.add(";|,", Token.TokenCategory.SP);
+        lexer.add("&&", Token.TokenCategory.OP_AND);
+        lexer.add("| |", Token.TokenCategory.OP_OR);
+        lexer.add("!", Token.TokenCategory.OP_NOT);
+        lexer.add(";|,", Token.TokenCategory.SEP);
         lexer.add("\\(", Token.TokenCategory.AB_PAR);
         lexer.add("\\)", Token.TokenCategory.FEC_PAR);
         lexer.add("\\[", Token.TokenCategory.AB_COL);
@@ -88,7 +91,7 @@ public class Lexer {
         lexer.add("[a-zA-Z][_a-zA-Z0-9]*\\w*", Token.TokenCategory.ID);
         lexer.add("[+|-]?([0-9]*\\.[0-9]+)", Token.TokenCategory.CTE_FLOAT);
         lexer.add("[0-9]+", Token.TokenCategory.CTE_INT);
-        lexer.add("[a-zA-Z_]?\"(\\.|[^\"])*\"", Token.TokenCategory.CTE_STR);
+        lexer.add("[a-zA-Z_]?\"(\\.|[^\"])*\"", Token.TokenCategory.CTE_CHAR);
         lexer.add("#[a-zA-Z][_a-zA-Z0-9]*", Token.TokenCategory.COMMENT);
 
         return lexer;

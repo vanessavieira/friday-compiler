@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String path = "/Users/rubenspessoa/Documents/workspace/nova-compiler/nova-compiler/src/main/java/";
+        String path = "/Users/vanessa.vieira/Documents/GitHub/friday-compiler/nova-compiler/src/main/java/";
 
         File helloWorld = new File(path + "CodeExamples/helloWorld.txt");
         File fibonacci = new File(path + "CodeExamples/fibonacci.txt");

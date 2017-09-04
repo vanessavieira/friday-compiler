@@ -5,9 +5,6 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by rubenspessoa on 18/10/16.
- */
 public class Parser {
 
     private LinkedList<Token> tokens;
