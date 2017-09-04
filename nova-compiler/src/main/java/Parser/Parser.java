@@ -150,12 +150,12 @@ public class Parser {
         } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_REPEAT) {
             output.add("<commands> ::= PR_REPEAT (" + lookahead.getSequence() +  ") <repeat> <commands>");
             nextToken();
-            this.for_prod();
+            this.repeatUntil_prod();
             this.commands();
         } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_UNTIL) {
             output.add("<commands> ::= PR_UNTIL (" + lookahead.getSequence() +  ") <until> <commands>");
             nextToken();
-            this.for_prod();
+            this.repeatUntil_prod();
             this.commands();
         } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_ANSWER) {
             output.add("<commands> ::= PR_ANSWER (" + lookahead.getSequence() + ") <answer> SEP");
@@ -187,11 +187,11 @@ public class Parser {
         }
     }
 
-    private void for_prod() throws ParserException {
+    private void repeatUntil_prod() throws ParserException {
         if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
-            output.add("<for> ::= AB_PAR <for_steps> FEC_PAR <scope>");
+            output.add("<repeatUntil> ::= AB_PAR <repeatUntil_steps> FEC_PAR <scope>");
             nextToken();
-            this.for_steps();
+            this.repeatUntil_steps();
             if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
                 nextToken();
                 this.scope();
@@ -203,7 +203,7 @@ public class Parser {
         }
     }
 
-    private void for_steps() throws ParserException {
+    private void repeatUntil_steps() throws ParserException {
 
         if (lookahead.getTokenCategory() == Token.TokenCategory.TYPE_VALUE) {
             nextToken();

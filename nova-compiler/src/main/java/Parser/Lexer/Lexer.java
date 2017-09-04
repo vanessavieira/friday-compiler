@@ -38,7 +38,7 @@ public class Lexer {
     private LinkedList<Token> tokens;
     private static Lexer lexer = null;
 
-    private Lexer() {
+    public Lexer() {
         this.tokenInfos = new LinkedList<TokenInfo>();
         this.tokens = new LinkedList<Token>();
     }
