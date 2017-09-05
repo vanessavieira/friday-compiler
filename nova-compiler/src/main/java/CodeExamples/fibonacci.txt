@@ -1,38 +1,30 @@
 Funfun {
-	Fun Integer Fibonacci(Integer n);
+Fun Integer Fibonacci(Integer n);
 }
-
 Fun Integer Fibonacci(Integer n) {
-	FunInternDec {
-		Integer a;
-		Integer b;
-		Integer total;
-		Integer i;
-	}
-    
-	a = 1;
-	b = 1
-	
-	While(i <= n) {
-		total  = a + b;
-		a = b;
-		b = total;
-	
-		i++;
-	}
-	Answer b;
+FunInternDec {
+Integer a;
+Integer b;
+Integer total;
+Integer i;
 }
-
-Fun Integer main() {
-		FunInternDec {
-			Integer n;
-			Integer resposta;
-        	}
-	
-    Read(Integer n);
-    
-	resposta = Fibonacci(n);
-	Print(resposta ++ " ");
-    
-	Answer 0;
+a = 1;
+b = 1
+While(i <= n) {
+total  = a + b;
+a = b;
+b = total;	
+i = i + 1;
+}
+Answer b;
+}
+Fun Integer Main() {
+FunInternDec {
+Integer n;
+Integer resposta;
+}
+Read(Integer n);
+resposta = Fibonacci(n);
+Print(resposta ++ " ");
+Answer 0;
 }

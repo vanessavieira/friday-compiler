@@ -1,57 +1,46 @@
 Funfun {
-	Fun Integer ShellSort(Vetor[], Integer n);
+Fun Integer ShellSort(Vetor[], Integer n);
 }
-
 Fun Void ShellSort(Integer vetor[], Integer n) {
-	FunInternDec {
-    	Integer a;
-    	Integer b;
-    	Integer i;
-    	Integer j;
-    }
-    
-    a = 1;
-    
-	While(a < n) {
-		a = a * 3 + 1;
-	}
-	While (a > 0) {
-		Repeat i Until n {
-			b = vetor[i];
-			j = i;
-
-			While (a <= j && vetor[j - a ] < b) {
-				vetor[j] = vetor[j - a];
-				j = j - a;
-			}
-			vetor[j] = b;
-		}
-        
-		a = a / 2;
-	}
+FunInternDec {
 }
-
-Fun Integer main() {
-
-	FunInternDec {
-		Integer = a;
-		Integer = b[100];
-		Integer = j;
-	}
-    
-	Read(a);
- 	
-	Repeat j = 1 Until 100 {
-		Print("Digite um valor: ");
-		Read(b[i]);
-	}
-        
-	ShellSort(b[100], a);
-    
-	Printf("Valores ordenados: ");
-	Repeat j = 1 Until 100 {
-		Print(b[i] ++ " ");
-	}
-    
-	Answer 0;
+Integer a;
+Integer b;
+Integer i;
+Integer j;
+}
+a = 1;
+While(a < n) {
+a = a * 3 + 1;
+}
+While (a > 0) {
+Repeat i Until n {
+b = vetor[i];
+j = i;
+While (a <= j && vetor[j - a ] < b) {
+vetor[j] = vetor[j - a];
+j = j - a;
+}
+vetor[j] = b;
+}
+a = a / 2;
+}
+}
+Fun Integer Main() {
+FunInternDec {
+Integer = a;
+Integer = b[100];
+Integer = j;
+}
+Read(a);
+Repeat j = 1 Until 100 {
+Print("Digite um valor: ");
+Read(b[i]);
+}
+ShellSort(b[100], a);
+Printf("Valores ordenados: ");
+Repeat j = 1 Until 100 {
+Print(b[i] ++ " ");
+}
+Answer 0;
 }
