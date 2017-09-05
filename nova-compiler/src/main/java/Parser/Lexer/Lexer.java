@@ -38,7 +38,7 @@ public class Lexer {
     private LinkedList<Token> tokens;
     private static Lexer lexer = null;
 
-    public Lexer() {
+    private Lexer() {
         this.tokenInfos = new LinkedList<TokenInfo>();
         this.tokens = new LinkedList<Token>();
     }
@@ -55,19 +55,19 @@ public class Lexer {
 
     private static Lexer createLexer() throws Exception {
         Lexer lexer = new Lexer();
-
+        //lexer.add("", Token.TokenCategory.EOF);
         lexer.add("Read|Print", Token.TokenCategory.PR_IO);
         lexer.add("Void", Token.TokenCategory.PR_VOID);
         lexer.add("Main", Token.TokenCategory.PR_MAIN);
         lexer.add("If", Token.TokenCategory.PR_IF);
         lexer.add("Else", Token.TokenCategory.PR_ELSE);
         lexer.add("While", Token.TokenCategory.PR_WHILE);
-        lexer.add("Fun", Token.TokenCategory.PR_FUN);
-        lexer.add("Repeat", Token.TokenCategory.PR_REPEAT);
-        lexer.add("Until", Token.TokenCategory.PR_UNTIL);
         lexer.add("Funfun", Token.TokenCategory.PR_FUNFUN);
         lexer.add("FunGlobalDec", Token.TokenCategory.PR_FUNGLOBALDEC);
         lexer.add("FunInternDec", Token.TokenCategory.PR_FUNINTERNDEC);
+        lexer.add("Fun", Token.TokenCategory.PR_FUN);
+        lexer.add("Repeat", Token.TokenCategory.PR_REPEAT);
+        lexer.add("Until", Token.TokenCategory.PR_UNTIL);
         lexer.add("Answer", Token.TokenCategory.PR_ANSWER);
         lexer.add("CharacterArray|Integer|Float|Bool", Token.TokenCategory.TYPE_VALUE);
         lexer.add("True|False", Token.TokenCategory.BOOL_VALUE);
@@ -77,7 +77,7 @@ public class Lexer {
         lexer.add("\\+|-", Token.TokenCategory.OP_AD);
         lexer.add("\\*|/|%", Token.TokenCategory.OP_MULT);
         lexer.add("&&", Token.TokenCategory.OP_AND);
-        lexer.add("| |", Token.TokenCategory.OP_OR);
+        lexer.add("\\|\\|", Token.TokenCategory.OP_OR);
         lexer.add("!", Token.TokenCategory.OP_NOT);
         lexer.add(";|,", Token.TokenCategory.SEP);
         lexer.add("\\(", Token.TokenCategory.AB_PAR);

@@ -1,4 +1,4 @@
-Fun Integer main() {
-	Print("Alô Mundo!");
-	Answer 0;
+Fun Integer Main() {
+Print("Alô Mundo!");
+Answer 0;
 }

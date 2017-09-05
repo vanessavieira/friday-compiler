@@ -17,16 +17,16 @@ public class Main {
         File shellsort = new File(path + "CodeExamples/shellSort.txt");
 
         //Parser parser = new Parser();
-        Lexer lexer;
+        //Lexer lexer;
 
         try {
-            lexer = Lexer.getLexer();
+            Lexer lexer = Lexer.getLexer();
 
-            lexer.lex(helloWorld);
-            System.out.println(lexer.getTokens());
+//            lexer.lex(helloWorld);
+//            System.out.println(lexer.getTokens());
 
-            lexer.lex(fibonacci);
-            System.out.println(lexer.getTokens());
+//            lexer.lex(fibonacci);
+//            System.out.println(lexer.getTokens());
 
             lexer.lex(shellsort);
             System.out.println(lexer.getTokens());
