@@ -9,7 +9,7 @@ Integer total;
 Integer i;
 }
 a = 1;
-b = 1
+b = 1;
 While(i <= n) {
 total  = a + b;
 a = b;
@@ -23,7 +23,7 @@ FunInternDec {
 Integer n;
 Integer resposta;
 }
-Read(Integer n);
+Read(n);
 resposta = Fibonacci(n);
 Print(resposta ++ " ");
 Answer 0;

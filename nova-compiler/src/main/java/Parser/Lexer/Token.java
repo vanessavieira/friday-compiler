@@ -32,7 +32,7 @@ public class Token {
         PR_WHILE(22),
         PR_REPEAT(23),
         PR_UNTIL(24),
-        PR_IO(25),
+        PR_IO_READ(25),
         TYPE_VALUE(26),
         BOOL_VALUE(27),
         SEP(28),
@@ -44,7 +44,8 @@ public class Token {
         FEC_COL(34),
         PR_VOID(35),
         PR_MAIN(36),
-        OP_CONC(37);
+        OP_CONC(37),
+        PR_IO_PRINT(38);
 
         private int value;
 
