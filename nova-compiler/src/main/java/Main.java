@@ -19,9 +19,8 @@ public class Main {
         Parser parser = new Parser();
 
         try {
-            //parser.parse(helloWorld);
-            //parser.parse(fibonacci);
-            List<String> output = parser.parse(helloWorld);
+
+            List<String> output = parser.parse(shellsort);
 
             for (String prod : output) {
                 System.out.println(prod);
@@ -30,6 +29,5 @@ public class Main {
         } catch ( Exception e ) {
             System.err.println(e.getMessage());
         }
-
     }
 }

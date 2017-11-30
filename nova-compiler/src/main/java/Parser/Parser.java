@@ -5,7 +5,7 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
-//+ lookahead.getSequence() +
+//("+ lookahead.getSequence() +")
 
 public class Parser {
 
@@ -36,7 +36,7 @@ public class Parser {
     }
 
     private int S() throws ParserException {
-        if(this.lookahead.getTokenCategory() == Token.TokenCategory.PR_FUNGLOBALDEC ||
+        if (this.lookahead.getTokenCategory() == Token.TokenCategory.PR_FUNGLOBALDEC ||
                 this.lookahead.getTokenCategory() == Token.TokenCategory.PR_FUN ||
                 this.lookahead.getTokenCategory() == Token.TokenCategory.PR_FUNFUN) {
 
@@ -53,7 +53,7 @@ public class Parser {
     private void GlobalDecl() throws ParserException {
 
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.PR_FUNGLOBALDEC) {
-            output.add("GlobalDecl = 'FunGlobalDec' (" + this.lookahead.getSequence() + ") '{' Decl '}' Atrib ");
+            output.add("GlobalDecl = 'FunGlobalDec' '{' Decl '}' Atrib ");
             this.nextToken();
 
             if (this.lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
@@ -84,7 +84,7 @@ public class Parser {
     private void GlobalFunctionDec() throws ParserException {
 
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.PR_FUNFUN) {
-            output.add("GlobalFunctionDec = 'FunFun' (" + this.lookahead.getSequence() + ") '{' LDeclFun '}'");
+            output.add("GlobalFunctionDec = 'FunFun' '{' LDeclFun '}'");
             this.nextToken();
 
             if (this.lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
@@ -111,7 +111,7 @@ public class Parser {
 
     }
 
-    private void  LDeclFun() throws ParserException {
+    private void LDeclFun() throws ParserException {
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.PR_FUN) {
             output.add("LDeclFun = DeclFun LDeclFun");
 
@@ -119,8 +119,6 @@ public class Parser {
 
         } else {
             output.add("LDeclFun = epsilon");
-
-            this.LFunctionImpl();
         }
 
     }
@@ -128,7 +126,7 @@ public class Parser {
     private void DeclFun() throws ParserException {
 
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.PR_FUN) {
-            output.add("DeclFun = 'Fun' (" + this.lookahead.getSequence() + ") FunctionType 'id' AbrFecPar ';' DeclFun");
+            output.add("DeclFun = 'Fun' FunctionType 'id' AbrFecPar ';' DeclFun");
 
             this.nextToken();
             this.FunctionType();
@@ -145,7 +143,7 @@ public class Parser {
                     throw new ParserException("Unexpected symbol " + lookahead + " found!");
                 }
 
-            }  else {
+            } else {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
             }
 
@@ -157,6 +155,7 @@ public class Parser {
 
     private void FunctionType() throws ParserException {
         output.add("FunctionType = '" + this.lookahead.getSequence() + "'");
+        output.add("    FunctionType = "+ this.lookahead +" ");
 
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.TYPE_VALUE || this.lookahead.getTokenCategory() == Token.TokenCategory.PR_VOID) {
             this.nextToken();
@@ -181,7 +180,7 @@ public class Parser {
         }
     }
 
-    private void MainFunctionImpl()  throws ParserException {
+    private void MainFunctionImpl() throws ParserException {
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.PR_MAIN) {
             output.add("MainFunctionImpl = Main");
             this.Main();
@@ -194,40 +193,28 @@ public class Parser {
 
     private void FunctionImpl() throws ParserException {
 
-        if (this.lookahead.getTokenCategory() == Token.TokenCategory.PR_FUN) {
-            output.add("DeclFun = 'Fun' (" + this.lookahead.getSequence() + ") FunctionType 'id' AbrFecPar ';' DeclFun");
+        if (this.lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+            output.add("DeclFun = 'Fun' FunctionType 'id' AbrFecPar ';' DeclFun");
 
-            if (this.lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+            this.nextToken();
+            this.AbrFecPar();
+
+            if (this.lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
                 this.nextToken();
-                this.AbrFecPar();
+                this.InternalDecl();
+                this.LAtrib();
+                this.Instruction();
 
-                if (this.lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
-                    this.AbrFecPar();
-
-                    if (this.lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
-                        this.nextToken();
-                        this.InternalDecl();
-
-                        this.nextToken();
-                        this.LAtrib();
-
-                        this.nextToken();
-                        this.Instruction();
-
-                        if (this.lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
-                            this.nextToken();
-                            this.LFunctionImpl();
-                        }
-                    }
+                if (this.lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
+                    this.nextToken();
+                    this.LFunctionImpl();
 
                 } else {
                     throw new ParserException("Unexpected symbol " + lookahead + " found!");
                 }
-
-            }  else {
+            } else {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
             }
-
         } else {
             throw new ParserException("Unexpected symbol " + lookahead + " found!");
         }
@@ -236,7 +223,7 @@ public class Parser {
 
     private void Main() throws ParserException {
 
-        output.add("Main = 'Fun' (" + this.lookahead.getSequence() + ") 'Integer' 'Main' AbrFecPar '{' InternalDecl Instruction '}' ");
+        output.add("Main = 'Fun' 'Integer' 'Main' AbrFecPar '{' InternalDecl Instruction '}' ");
 
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.PR_MAIN) {
             this.nextToken();
@@ -245,12 +232,10 @@ public class Parser {
             if (this.lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
                 this.nextToken();
                 this.InternalDecl();
-
                 this.LAtrib();
-
                 this.Instruction();
 
-                if (this.lookahead.getTokenCategory() ==  Token.TokenCategory.FEC_CH) {
+                if (this.lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
                     this.nextToken();
                     this.S();
                 }
@@ -258,7 +243,7 @@ public class Parser {
             } else {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
             }
-        }  else {
+        } else {
             throw new ParserException("Unexpected symbol " + lookahead + " found!");
         }
     }
@@ -274,7 +259,7 @@ public class Parser {
             if (this.lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
                 this.nextToken();
 
-            }  else {
+            } else {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
             }
 
@@ -309,7 +294,7 @@ public class Parser {
             this.VarType();
 
             if (this.lookahead.getTokenCategory() == Token.TokenCategory.ID) {
-                this.nextToken();
+                this.Id();
                 this.Parameter();
 
             } else {
@@ -353,6 +338,7 @@ public class Parser {
 
     private void VarType() throws ParserException {
         output.add("VarType = '" + this.lookahead.getSequence() + "'");
+        output.add("    VarType = "+ this.lookahead +" ");
 
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.TYPE_VALUE) {
             this.nextToken();
@@ -389,8 +375,12 @@ public class Parser {
     private void Id() throws ParserException {
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.ID) {
             output.add("Id = 'id' VectorType");
+            output.add("    'id' = "+ this.lookahead +" ");
 
             this.nextToken();
+            this.VectorType();
+
+        } else if (this.lookahead.getTokenCategory() == Token.TokenCategory.AB_COL) {
             this.VectorType();
 
         } else {
@@ -414,7 +404,9 @@ public class Parser {
     }
 
     private void LAtrib() throws ParserException {
-        if (this.lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+        if (this.lookahead.getTokenCategory() == Token.TokenCategory.ID ||
+                this.lookahead.getTokenCategory() == Token.TokenCategory.OP_ATR ||
+                this.lookahead.getTokenCategory() == Token.TokenCategory.AB_COL) {
             output.add("LAtrib = Atrib LAtrib");
 
             this.Atrib();
@@ -426,12 +418,11 @@ public class Parser {
     }
 
     private void Atrib() throws ParserException {
-        output.add("Atrib = Id '=' Es ';' ");
-
-        this.Id();
-
         if (this.lookahead.getTokenCategory() == Token.TokenCategory.OP_ATR) {
+            output.add("Atrib = '=' Es ';' ");
+
             this.nextToken();
+            this.Eb();
 
             if (this.lookahead.getTokenCategory() == Token.TokenCategory.SEP) {
                 this.nextToken();
@@ -439,11 +430,30 @@ public class Parser {
 
             } else {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
-
             }
+
         } else {
-            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+            output.add("Atrib = Id '=' Es ';' ");
+
+            this.Id();
+
+            if (this.lookahead.getTokenCategory() == Token.TokenCategory.OP_ATR) {
+                this.nextToken();
+                this.Eb();
+
+                if (this.lookahead.getTokenCategory() == Token.TokenCategory.SEP) {
+                    this.nextToken();
+                    this.LAtrib();
+
+                } else {
+                    throw new ParserException("Unexpected symbol " + lookahead + " found!");
+
+                }
+            } else {
+                throw new ParserException("Unexpected symbol " + lookahead + " found!");
+            }
         }
+
     }
 
     private void Instruction() throws ParserException {
@@ -452,7 +462,8 @@ public class Parser {
                 this.lookahead.getTokenCategory() == Token.TokenCategory.PR_WHILE ||
                 this.lookahead.getTokenCategory() == Token.TokenCategory.PR_REPEAT ||
                 this.lookahead.getTokenCategory() == Token.TokenCategory.PR_ANSWER ||
-                this.lookahead.getTokenCategory() == Token.TokenCategory.PR_IO) {
+                this.lookahead.getTokenCategory() == Token.TokenCategory.PR_IO_PRINT ||
+                this.lookahead.getTokenCategory() == Token.TokenCategory.PR_IO_READ) {
 
             output.add("Instruction = Command Instruction");
             this.Command();
@@ -466,24 +477,31 @@ public class Parser {
 
     private void Command() throws ParserException {
 
-        if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.OP_ATR || lookahead.getTokenCategory() == Token.TokenCategory.ID) {
             output.add("Command = FuncAtrib ");
 
-            this.nextToken();
-
-            if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
-                output.add("FuncAtrib = FunctionCall ");
-                this.FunctionCall();
-                this.Instruction();
-
-            } else {
+            if (lookahead.getTokenCategory() == Token.TokenCategory.OP_ATR) {
                 output.add("FuncAtrib = LAtrib ");
                 this.LAtrib();
                 this.Instruction();
+
+            } else {
+                //this.Id();
+                this.nextToken();
+
+                if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
+                    output.add("FuncAtrib = FunctionCall ");
+                    this.FunctionCall();
+                    this.Instruction();
+
+                } else {
+                    output.add("FuncAtrib = LAtrib ");
+                    this.LAtrib();
+                    this.Instruction();
+                }
             }
 
-
-        } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_IO) {
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_IO_READ) {
             output.add("Command = " + lookahead.getSequence() + " ");
 
             nextToken();
@@ -491,7 +509,19 @@ public class Parser {
             if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
                 nextToken();
 
-                this.PrintRead();
+                this.Read();
+                this.Instruction();
+            }
+
+        } else if (lookahead.getTokenCategory() == Token.TokenCategory.PR_IO_PRINT) {
+            output.add("Command = " + lookahead.getSequence() + " ");
+
+            nextToken();
+
+            if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
+                nextToken();
+
+                this.Print();
                 this.Instruction();
             }
 
@@ -526,12 +556,12 @@ public class Parser {
     }
 
     private void FunctionCall() throws ParserException {
-        if(lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
             output.add("FunctionCall = 'id' AbrFecPar ';' ");
 
             this.AbrFecPar();
 
-            if(lookahead.getTokenCategory() == Token.TokenCategory.SEP) {
+            if (lookahead.getTokenCategory() == Token.TokenCategory.SEP) {
                 this.nextToken();
             }
         } else {
@@ -540,23 +570,23 @@ public class Parser {
     }
 
     private void If() throws ParserException {
-        if(lookahead.getTokenCategory() == Token.TokenCategory.PR_IF) {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.PR_IF) {
             output.add("If = 'If' '(' Eb ')' '{' Instruction '}' Else");
 
             this.nextToken();
 
-            if(lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
+            if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
                 this.nextToken();
                 this.Eb();
 
-                if(lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
+                if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
                     this.nextToken();
 
-                    if(lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
+                    if (lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
                         this.nextToken();
                         this.Instruction();
 
-                        if(lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
+                        if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
                             this.nextToken();
                             this.Else();
 
@@ -578,7 +608,7 @@ public class Parser {
     }
 
     private void Else() throws ParserException {
-        if(lookahead.getTokenCategory() == Token.TokenCategory.PR_ELSE) {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.PR_ELSE) {
             output.add("Else = 'Else' '{' Instruction '}'");
 
             this.nextToken();
@@ -598,23 +628,23 @@ public class Parser {
     }
 
     private void While() throws ParserException {
-        if(lookahead.getTokenCategory() == Token.TokenCategory.PR_WHILE) {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.PR_WHILE) {
             output.add("While = 'While' '(' Eb ')' '{' Instruction '}'");
 
             this.nextToken();
 
-            if(lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
+            if (lookahead.getTokenCategory() == Token.TokenCategory.AB_PAR) {
                 this.nextToken();
                 this.Eb();
 
-                if(lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
+                if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
                     this.nextToken();
 
-                    if(lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
+                    if (lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
                         this.nextToken();
                         this.Instruction();
 
-                        if(lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
+                        if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
                             this.nextToken();
 
                         } else {
@@ -634,27 +664,32 @@ public class Parser {
         }
     }
 
-    private void PrintRead() throws ParserException {
-        if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
-            output.add("Read = 'Read' Id (" + lookahead.getSequence() + ") ')' ';' ");
+    private void Print() throws ParserException {
+        output.add("Print = 'Print' '(' Es ')' ';' ");
+        this.Es();
 
-            Id();
+        if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
+            nextToken();
 
-            if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
+            if (lookahead.getTokenCategory() == Token.TokenCategory.SEP) {
                 nextToken();
 
-                if (lookahead.getTokenCategory() == Token.TokenCategory.SEP) {
-                    nextToken();
-
-                } else {
-                    throw new ParserException("Unexpected symbol " + lookahead + " found!");
-                }
             } else {
                 throw new ParserException("Unexpected symbol " + lookahead + " found!");
             }
-
         } else {
-            output.add("Print = 'Print' '(' Es ')' ';' ");
+            throw new ParserException("Unexpected symbol " + lookahead + " found!");
+        }
+    }
+
+
+
+
+    private void Read() throws ParserException {
+        if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
+            output.add("Read = 'Read' '(' Id ')' ';' ");
+
+            Id();
             this.Es();
 
             if (lookahead.getTokenCategory() == Token.TokenCategory.FEC_PAR) {
@@ -671,6 +706,7 @@ public class Parser {
             }
         }
     }
+
 
     private void Answer() throws ParserException {
         if(lookahead.getTokenCategory() == Token.TokenCategory.PR_ANSWER) {
@@ -697,17 +733,14 @@ public class Parser {
                 if (lookahead.getTokenCategory() == Token.TokenCategory.OP_ATR) {
                     this.nextToken();
                     this.Ea();
-                    this.nextToken();
 
                     if (lookahead.getTokenCategory() == Token.TokenCategory.PR_UNTIL) {
                         this.nextToken();
                         this.Ea();
-                        this.nextToken();
 
                         if(lookahead.getTokenCategory() == Token.TokenCategory.AB_CH) {
                             this.nextToken();
                             this.Instruction();
-                            this.nextToken();
 
                             if(lookahead.getTokenCategory() == Token.TokenCategory.FEC_CH) {
                                 this.nextToken();
@@ -828,6 +861,7 @@ public class Parser {
     private void Ear() throws ParserException {
         if(lookahead.getTokenCategory() == Token.TokenCategory.OP_AD) {
             output.add("Ear = Opa Ta Ear");
+            output.add("    'Opa = "+ this.lookahead +" ");
             this.nextToken();
             this.Ta();
 
@@ -846,6 +880,7 @@ public class Parser {
     private void Tar() throws ParserException {
         if(lookahead.getTokenCategory() == Token.TokenCategory.OP_MULT) {
             output.add("Tar = Opm Fa Tar");
+            output.add("    'Opm = "+ this.lookahead +" ");
             this.nextToken();
             this.Fa();
 
@@ -868,20 +903,23 @@ public class Parser {
         } else if (lookahead.getTokenCategory() == Token.TokenCategory.ID) {
             output.add("Fa = Id");
             this.Id();
-            this.nextToken();
 
         } else if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_INT) {
             output.add("Fa = 'cteInt' ");
+            output.add("    cteInt = "+ this.lookahead +" ");
             this.nextToken();
 
         } else if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_FLOAT) {
             output.add("Fa = 'cteFloat' ");
+            output.add("    cteFloat = "+ this.lookahead +" ");
             this.nextToken();
 
         } else if (lookahead.getTokenCategory() == Token.TokenCategory.CTE_CHAR) {
             output.add("Fa = 'cteCharArray' ");
+            output.add("    cteCharArray = "+ this.lookahead +" ");
             this.nextToken();
-
+        } else {
+            output.add("Fa = epsilon ");
         }
     }
 

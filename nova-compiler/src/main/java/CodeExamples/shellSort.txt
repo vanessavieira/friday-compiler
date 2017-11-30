@@ -1,9 +1,8 @@
 Funfun {
-Fun Integer ShellSort(Vetor[], Integer n);
+Fun Integer ShellSort(Integer Vetor[], Integer n);
 }
-Fun Void ShellSort(Integer vetor[], Integer n) {
+Fun Void ShellSort(Integer Vetor[], Integer n) {
 FunInternDec {
-}
 Integer a;
 Integer b;
 Integer i;
@@ -14,7 +13,7 @@ While(a < n) {
 a = a * 3 + 1;
 }
 While (a > 0) {
-Repeat i Until n {
+Repeat i = 0 Until n {
 b = vetor[i];
 j = i;
 While (a <= j && vetor[j - a ] < b) {
@@ -28,17 +27,17 @@ a = a / 2;
 }
 Fun Integer Main() {
 FunInternDec {
-Integer = a;
-Integer = b[100];
-Integer = j;
+Integer a;
+Integer b[100];
+Integer j;
 }
 Read(a);
 Repeat j = 1 Until 100 {
 Print("Digite um valor: ");
 Read(b[i]);
 }
-ShellSort(b[100], a);
-Printf("Valores ordenados: ");
+ShellSort(Integer b[100], Integer a);
+Print("Valores ordenados: ");
 Repeat j = 1 Until 100 {
 Print(b[i] ++ " ");
 }
