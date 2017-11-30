@@ -74,6 +74,7 @@ public class Lexer {
         lexer.add("<=|>=|<|>", Token.TokenCategory.OP_REL1);
         lexer.add("==|!=", Token.TokenCategory.OP_REL2);
         lexer.add("=", Token.TokenCategory.OP_ATR);
+        lexer.add("\\+\\+", Token.TokenCategory.OP_CONC);
         lexer.add("\\+|-", Token.TokenCategory.OP_AD);
         lexer.add("\\*|/|%", Token.TokenCategory.OP_MULT);
         lexer.add("&&", Token.TokenCategory.OP_AND);
