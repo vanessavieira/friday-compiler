@@ -16,20 +16,16 @@ public class Main {
         File fibonacci = new File(path + "CodeExamples/fibonacci.txt");
         File shellsort = new File(path + "CodeExamples/shellSort.txt");
 
-        //Parser parser = new Parser();
-        //Lexer lexer;
+        Parser parser = new Parser();
 
         try {
-            Lexer lexer = Lexer.getLexer();
+            //parser.parse(helloWorld);
+            //parser.parse(fibonacci);
+            List<String> output = parser.parse(helloWorld);
 
-//            lexer.lex(helloWorld);
-//            System.out.println(lexer.getTokens());
-
-//            lexer.lex(fibonacci);
-//            System.out.println(lexer.getTokens());
-
-            lexer.lex(shellsort);
-            System.out.println(lexer.getTokens());
+            for (String prod : output) {
+                System.out.println(prod);
+            }
 
         } catch ( Exception e ) {
             System.err.println(e.getMessage());

@@ -43,7 +43,8 @@ public class Token {
         AB_COL(33),
         FEC_COL(34),
         PR_VOID(35),
-        PR_MAIN(36);
+        PR_MAIN(36),
+        OP_CONC(37);
 
         private int value;
 
